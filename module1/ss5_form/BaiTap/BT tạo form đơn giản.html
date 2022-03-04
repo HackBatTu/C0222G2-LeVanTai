@@ -3,24 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .container {
+            width: 420px;
+            height: auto;
+            margin: 0px auto;
+            border: 5px solid black;
+            padding: 30px;
+            background-color: white;
+        }
+        h1{ background-color: red; color: white; text-align: center;border-collapse: collapse }
+    </style>
 </head>
 <body>
+<div class="container">
 <h1>Sở Thích Của Bạn</h1>
 <form action="/action_page.php">
-    Yourname : <br>
-    <input type="text" name="Yourname" ><br>
-    Email : <br>
+    <div style="color: blue">Yourname : </div>
+    <input type="text" name =Yourname><br>
+    <div style="color: blue">Email : </div>
     <input type="text" name="Email" ><br><br>
-    Hobby :
-            <input type="checkbox" name="hobby" valua="Thể Thao"> Thể Thao
-            <input type="checkbox" name="hobby" valua="Lướt web" Lướt web
-            <input type="checkbox" name="hobby" valua="Du lịch">Du lịch<br>
-            <input type="checkbox" name="hobby" valua="Chơi game">Chơi game
-            <input type="checkbox" name="hobby" valua="Âm nhạc">Âm nhạc
-            <input type="checkbox" name="hobby" Valua="Đọc sách">Đọc sách<br>
-            <input type="checkbox" name="hobby"Valua=" điện ảnh">Điện ảnh<br>
+    <div style="color: blue">Hobby :</div>
+    <div style="color: red">
+        <input type="checkbox" name="hobby" valua="Thể Thao"> Thể Thao
+        <input type="checkbox" name="hobby" valua="Lướt web" Lướt web
+        <input type="checkbox" name="hobby" valua="Du lịch">Du lịch<br>
+        <input type="checkbox" name="hobby" valua="Chơi game">Chơi game
+        <input type="checkbox" name="hobby" valua="Âm nhạc">Âm nhạc
+        <input type="checkbox" name="hobby" Valua="Đọc sách">Đọc sách<br>
+        <input type="checkbox" name="hobby"Valua=" điện ảnh">Điện ảnh<br>
+    </div>
+        <br>
     <input type="submit" value="Submit Form">
     <input type="reset" valua="Reset Form">
 </form>
+</div>
 </body>
 </html>

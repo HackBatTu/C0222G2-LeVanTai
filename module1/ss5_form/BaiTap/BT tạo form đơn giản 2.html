@@ -3,30 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+   <style>
+       .container {
+           width: 420px;
+           height: auto;
+           margin: 0px auto;
+           border: 5px solid black;
+           padding: 30px;
+           background-color: moccasin;
+       }
+   </style>
 </head>
 <body>
-<h1>ĐĂNG KÝ HỌC VIÊN</h1>
+<div class="container">
+<h1 style="color: blue">ĐĂNG KÝ HỌC VIÊN</h1>
 <form>
-    Your name :<br>
+    <div style="color: blue">Your name :</div>
          <input type="text" name="Yourname" ><br>
-    Date of bird :<br>
+    <div style="color: blue">Date of bird :<br></div>
           <input type="text" name="Date of bird"><br>
-    Hobby :<br>
+    <div style="color: blue">Hobby :<br></div>
           <input type="radio" name="Hobby" valua="Male"> male <br>
           <input type="radio" name="Hobby" valua="Famale"> Female <br>
-    address : <br>
+    <div style="color: blue">address : <br></div>
           <textarea rows="5" cols="50" name="address"></textarea><br>
-    Class:
+    <div style="color: blue">Class:</div>
           <select>
               <option valua="G1">G1</option>
               <option valua="G2">G2</option>
               <option valua="G3">G3</option>
           </select><br>
-    Email :<br>
+    <div style="color: blue">Email :<br></div>
           <input type="text" name="Email"><br>
-    Phone :<br>
+    <div style="color: blue">Phone :<br></div>
           <input type="text" name="phone"><br>
     <input type="submit" valua="submit">
     <input type="reset" valua="reset">
+</form>
+</div>
 </body>
 </html>
