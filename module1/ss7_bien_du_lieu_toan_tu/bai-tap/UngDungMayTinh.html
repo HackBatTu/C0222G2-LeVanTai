@@ -6,48 +6,40 @@
 </head>
 <body>
     <h2> Caculator </h2>
-    <input id="num1" type="text" value="12">
-    <input id="num2" type="text" value="13"><br>
+    <input id="num1" type="text">
+    <input id="num2" type="text"><br>
 
-    <button onclick = "sum()" value="Addition(+)">Addition(+)</button>
-    <button onclick = "sums()" value="Subtraction(-)">Subtraction(-)</button>
-    <button onclick = "sumss()" value="Multiplication(X)">Multiplication(x)</button>
-    <button onclick = "sumsss()" value="Division(/)">Division(/)</button>
+    <button onclick = "sum('add')" value="Addition(+)">Addition(+)</button>
+    <button onclick = "sum('sub')" value="Subtraction(-)">Subtraction(-)</button>
+    <button onclick = "sum('mul')" value="Multiplication(X)">Multiplication(x)</button>
+    <button onclick = "sum('div')" value="Division(/)">Division(/)</button>
+    <br>
 
-<script>
+    <script>
 
-    function sum() {
+    function sum(operator) {
         let a = document.getElementById("num1").value;
         let b = document.getElementById("num2").value;
-        let c = Number(a) + Number(b);
-
-        document.write("c = " + c)
-
-    }
-    function sums() {
-        let a = document.getElementById("num1").value;
-        let b = document.getElementById("num2").value;
-        let c = Number(a) - Number(b);
-
-        document.write("c = " + c)
-
-    }
-    function sumss() {
-        let a = document.getElementById("num1").value;
-        let b = document.getElementById("num2").value;
-        let c = Number(a) * Number(b);
-
-        document.write("c = " + c)
-
-    }function sumsss() {
-        let a = document.getElementById("num1").value;
-        let b = document.getElementById("num2").value;
-        let c = Number(a) / Number(b);
-
-        document.write("c = " + c)
-
+        let c
+        if (operator === 'add') {
+            let c = Number(a) + Number(b);
+            document.getElementById("result").value;
+        } else if (operator === 'sub') {
+            let c = Number(a) - Number(b);
+            document.getElementById("result").value;
+        } else if (operator === 'mul') {
+            let c = Number(a) * Number(b);
+            document.getElementById("result").value;
+        } else if (operator === 'div') {
+            let c = Number(a) / Number(b);
+            document.getElementById("result").value;
+        }
     }
 
-</script>
+    </script>
+    <label for="result">Result : </label>
+
+    <input type="text" id="result">
+
 </body>
 </html>

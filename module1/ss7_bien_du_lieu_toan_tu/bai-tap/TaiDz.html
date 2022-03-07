@@ -5,21 +5,30 @@
     <title>Title</title>
 </head>
 <body>
-    <button onclick="number" value="7">7</button>
-    <button onclick="number" value="8">8</button>
-    <button onclick="number" value="9">9</button>
-    <button onclick="number" value="Division">/</button><br>
-    <button onclick="number" value="4">4</button>
-    <button onclick="number" value="5">5</button>
-    <button onclick="number" value="6">6</button>
-    <button onclick="number" value="Multiplication">*</button><br>
-    <button onclick="number" value="1">1</button>
-    <button onclick="number" value="2">2</button>
-    <button onclick="number" value="3">3</button>
-    <button onclick="number" value="Subtraction">-</button><br>
-    <button onclick="number" value="Subtraction">0</button>
-    <button onclick="number" value=".">.</button>
-    <button onclick="number" value="=">=</button>
-    <button onclick="number" value="+">+</button>
+    <h2> Caculator </h2>
+    <input id="num1" type="text" value="12">
+    <input id="num2" type="text" value="13"><br>
+
+    <button onclick = "sum()" value="Addition(+)">Addition(+)</button>
+    <button onclick = "sum()" value="Subtraction(-)">Subtraction(-)</button>
+    <button onclick = "sum()" value="Multiplication(X)">Multiplication(x)</button>
+    <button onclick = "sum()" value="Division(/)">Division(/)</button>
+
+    <script>
+        function Number ( num1 , num2 ) {
+            let a = document.getElementById("num1").value;
+            let b = document.getElementById("num2").value;
+            let c = Number(a) + Number(b);
+            let d = Number(a) - Number(b);
+            let e = Number(a) * Number(b);
+            let f = Number(a) / Number(b);
+
+            document.write("c = " + c)
+            document.write("d = " + c)
+            document.write("e = " + c)
+            document.write("f = " + c)
+
+        }
+    </script>
 </body>
 </html>
