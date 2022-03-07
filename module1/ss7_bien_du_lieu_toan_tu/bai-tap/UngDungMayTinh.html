@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2> Caculator </h2>
+    <input id="num1" type="text" value="12">
+    <input id="num2" type="text" value="13"><br>
+
+    <button onclick = "sum()" value="Addition(+)">Addition(+)</button>
+    <button onclick = "sums()" value="Subtraction(-)">Subtraction(-)</button>
+    <button onclick = "sumss()" value="Multiplication(X)">Multiplication(x)</button>
+    <button onclick = "sumsss()" value="Division(/)">Division(/)</button>
+
+<script>
+
+    function sum() {
+        let a = document.getElementById("num1").value;
+        let b = document.getElementById("num2").value;
+        let c = Number(a) + Number(b);
+
+        document.write("c = " + c)
+
+    }
+    function sums() {
+        let a = document.getElementById("num1").value;
+        let b = document.getElementById("num2").value;
+        let c = Number(a) - Number(b);
+
+        document.write("c = " + c)
+
+    }
+    function sumss() {
+        let a = document.getElementById("num1").value;
+        let b = document.getElementById("num2").value;
+        let c = Number(a) * Number(b);
+
+        document.write("c = " + c)
+
+    }function sumsss() {
+        let a = document.getElementById("num1").value;
+        let b = document.getElementById("num2").value;
+        let c = Number(a) / Number(b);
+
+        document.write("c = " + c)
+
+    }
+
+</script>
+</body>
+</html>
