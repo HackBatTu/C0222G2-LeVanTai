@@ -20,19 +20,19 @@
     function sum(operator) {
         let a = document.getElementById("num1").value;
         let b = document.getElementById("num2").value;
-        let c
+        let c ;
         if (operator === 'add') {
             let c = Number(a) + Number(b);
-            document.getElementById("result").value;
+            document.getElementById("result").value = c ;
         } else if (operator === 'sub') {
             let c = Number(a) - Number(b);
-            document.getElementById("result").value;
+            document.getElementById("result").value = c ;
         } else if (operator === 'mul') {
             let c = Number(a) * Number(b);
-            document.getElementById("result").value;
+            document.getElementById("result").value = c ;
         } else if (operator === 'div') {
             let c = Number(a) / Number(b);
-            document.getElementById("result").value;
+            document.getElementById("result").value = c ;
         }
     }
 
