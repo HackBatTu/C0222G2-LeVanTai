@@ -5,38 +5,36 @@
     <title>Title</title>
 </head>
 <body>
-        <p>Amount : </p>
-        <input id="number" type="text" value="1"><br>
-        <p>From Currency : </p>
-        <select id="money">
-            <option value="VietNam">VietNam</option>
-            <option value="HoaKy">Hoaky</option>
-        </select>
-        <p>To Currency : </p>
-        <select id="moneyed">
-            <option value="VND">VND</option>
-            <option value="USA">USA</option>
-        </select><br><br>
+    <p>Amount : </p>
+    <input id="number" type="text" value="1"><br>
+    <p>From Currency : </p>
+    <select id="money">
+         <option value="VietNam">VietNam</option>
+         <option value="HoaKy">Hoaky</option>
+    </select>
+    <p>To Currency : </p>
+    <select id="moneyed">
+         <option value="VND">VND</option>
+         <option value="USA">USA</option>
+    </select><br><br>
 
     <button onclick="Convert()">Convert</button>
 
     <script>
-        function Convert() {
-            let a = document.getElementById("number").value;
-            let b = document.getElementById("money").value;
-            let c = document.getElementById("moneyed").value;
-            let d
-            if (b == "VietNam" && c == "USA")
-            {
-                d = Number(a) / 23000
-            }
-            else if ( b =="HoaKy" && c == "VND") {
-                d = Number(a) * 23000
-            }
-            else { d = a }
+         function Convert() {
+             let a = document.getElementById("number").value;
+             let b = document.getElementById("money").value;
+              let c = document.getElementById("moneyed").value;
+             if (b == "VietNam" && c == "USA")
+              {
+                let d = Number(a) / 23000
+             }
+             else if ( b =="HoaKy" && c == "VND") {
+                 let d = Number(a) * 23000
+              }
+             else { d = a }
 
-         document.write( '  = ' + d) }
-    </script>
-
+              document.write( '  = ' + d) }
+</script>
 </body>
 </html>
