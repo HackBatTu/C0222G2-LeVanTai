@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let soDien = parseFloat(prompt('nhap so dien(kWh)'));
+
+        if (soDien>401) {
+            let bac6= soDien*2927
+            document.write('bac6 = ' + bac6);
+        } else if (soDien>301) {
+            let bac5= soDien*2834
+            document.write('bac5 = ' + bac5);
+        } else if (soDien>201) {
+            let bac4= soDien*2536
+            document.write('bac4 = ' + bac4);
+        } else if (soDien>101) {
+            let bac3= soDien*2014
+            document.write('bac3 = ' + bac3);
+        } else if (soDien>51) {
+            let bac2= soDien*1734
+            document.write('bac2 = ' + bac2);
+        } else { let bac1= soDien*1678
+            document.write('bac1 = ' + bac1);
+        }
+    </script>
+</body>
+</html>

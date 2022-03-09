@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt('nhap so a: '));
+        let b = parseInt(prompt('nhap so b: '));
+        let c = parseInt(prompt('nhap so c: '));
+        let delta = b**2-4*a*c;
+
+        if (delta<0) {
+            alert('phuong trinh vo nghiem');
+        }else if (delta=0) {
+            alert('phuong trinh co nghiem kep');
+        }else {
+            alert('phuong trinh co hai nghiem phan biet');
+        }
+        document.write('delta= ' + delta);
+    </script>
+</body>
+</html>

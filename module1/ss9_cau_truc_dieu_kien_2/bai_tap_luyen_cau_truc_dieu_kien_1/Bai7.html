@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt('thoi gian goi(min): '));
+        let b = parseInt(prompt('so tien goi moi phut '));
+        let total = a*b ;
+
+        if ( total >= 1000000) {
+            let cuoc = total - (total*0.1)
+            document.write('cuoc= '+ cuoc);
+        } else if ( total >= 500000) {
+            let cuoc = total - (total*0.05)
+            document.write('cuoc= '+ cuoc);
+        } else if ( total >= 300000) {
+            let cuoc = total - (total*0.02)
+            document.write('cuoc= '+ cuoc);
+        } else {cuoc = total}
+
+    </script>
+</body>
+</html>

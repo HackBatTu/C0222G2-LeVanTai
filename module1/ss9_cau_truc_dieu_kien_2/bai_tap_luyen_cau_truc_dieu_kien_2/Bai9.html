@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let canhA = parseFloat(prompt('nhap canh a : '))
+        let canhB = parseFloat(prompt('nhap canh b : '))
+        let canhC = parseFloat(prompt('nhap canh c : '))
+
+        if (canhA>0 && canhB>0 && canhC>0) {
+            if (canhA+canhB > canhC) {
+                if (canhB+canhC > canhA ) {
+                    if (canhA+canhC > canhB) {
+                        alert('a,b,c la ba canh cua tam giac');
+                    }else{
+                        alert('a,b,c khong phai ba canh cua tam giac')
+                        }
+                }else{
+                    alert(' a,b,c khong phai ba canh cua tam giac')}
+            }else{
+                alert(' a,b,c khong phai ba canh cua tam giac')}
+        } else{
+            alert(' a,b,c khong phai ba canh cua tam giac')
+        }
+    </script>
+</body>
+</html>
