@@ -5,12 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<input type="text">
-<button type="button" >Tính số Ngày</button>
-<script>
-    let a = parseInt(prompt("nhập số tháng: "));
+<input type="text" id="nhapsothang" >
+<button onclick="tinhSoNgay()">Tính số ngày</button>
 
-    switch (a) {
+<script>
+    function tinhSoNgay() {
+        let soThang = document.getElementById('nhapSoThang').value;
+
+    switch (soThang) {
         case 1 :
         case 3 :
         case 5 :
@@ -19,19 +21,19 @@
         case 10 :
         case 12:
 
-            alert('31 ngày');
+            alert("thang " +sothang+" có 31 ngay" );
             break;
         case 2 :
-            alert('28 ngày || 29 ngày ');
+            alert('thang 2 co 28 ngay || 29 ngay ');
             break;
         case 4 :
         case 6 :
         case 9 :
         case 11 :
-            alert('30 ngày');
+            alert("thang " +sothang+ " có 30 ngay");
             break;
-    }
-
+        default:
+            alert('thang khong hop le')}}
 </script>
 </body>
 </html>

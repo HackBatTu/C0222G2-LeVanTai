@@ -5,20 +5,53 @@
     <title>Title</title>
     <style>
         .container {
-            width: 7%;
-            border: 2px solid black;
-            padding: 20px   ;
+            width: 10%;
+            height: auto;
+            padding: 30px;
+            margin: 0px auto;
+            border: 2px solid black;}
+        .num  {
+            width: 40px;
+            height: 40px;
+            padding-left : 10px;
         }
-        .num, .cal {
-            width:30px;
-            height:30px;
-            font-size:20px;
-        }
-        .num , .cal{
-            background-color: white;
-            color: blue;
+        cal  {
+            width: 40px;
+            height: 40px;
+            padding-left : 10px;
         }
     </style>
 </head>
 <body>
+<table>
+    <h3 style="text-align: center">Caculator</h3>
+    <div class="container">
+    <input tyle="text" onclick="call" id="mayTinh">
+    <p>
+        <button class="num" onclick="so()">1</button>
+        <button class="num" onclick="so()">2</button>
+        <button class="num" onclick="so()">3</button>
+        <button class="cal" onclick="phep()">+</button>
+    </p>
+    <p>
+        <button class="num" onclick="so()">4</button>
+        <button class="num" onclick="so()">5</button>
+        <button class="num" onclick="so()">6</button>
+        <button class="cal" onclick="phep()">-</button>
+    </p>
+    <p>
+        <button class="num" onclick="so()">7</button>
+        <button class="num" onclick="so()">8</button>
+        <button class="num" onclick="so()">9</button>
+        <button class="cal" onclick="cal()">x</button>
+    </p>
+    <p>
+        <button class="cal" onclick="xoa()">C</button>
+        <button class="num" onclick="so()">0</button>
+        <button class="cal" onclick="phep()">=</button>
+        <button class="num" onclick="phep()">/</button>
+    </p>
+</div>
+</table>
+</body>
 </html>
