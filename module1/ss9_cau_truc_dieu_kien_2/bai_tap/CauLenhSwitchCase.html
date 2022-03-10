@@ -5,12 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-<input type="text" id="nhapsothang" >
+<input type="text" id="nhapSoThang" >
 <button onclick="tinhSoNgay()">Tính số ngày</button>
 
 <script>
     function tinhSoNgay() {
-        let soThang = document.getElementById('nhapSoThang').value;
+        let soThang = parseInt(document.getElementById('nhapSoThang').value);
+        console.log(soThang);
 
     switch (soThang) {
         case 1 :
@@ -20,8 +21,7 @@
         case 8 :
         case 10 :
         case 12:
-
-            alert("thang " +sothang+" có 31 ngay" );
+            alert("thang " + soThang + " có 31 ngay");
             break;
         case 2 :
             alert('thang 2 co 28 ngay || 29 ngay ');
@@ -30,10 +30,12 @@
         case 6 :
         case 9 :
         case 11 :
-            alert("thang " +sothang+ " có 30 ngay");
+            alert("thang " + soThang + " có 30 ngay");
             break;
         default:
-            alert('thang khong hop le')}}
+            alert('thang khong hop le')
+            break;
+    }}
 </script>
 </body>
 </html>

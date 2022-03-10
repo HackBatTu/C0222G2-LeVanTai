@@ -8,50 +8,67 @@
             width: 10%;
             height: auto;
             padding: 30px;
-            margin: 0px auto;
             border: 2px solid black;}
         .num  {
             width: 40px;
             height: 40px;
-            padding-left : 10px;
+            padding : 10px;
         }
-        cal  {
+        .cal  {
             width: 40px;
             height: 40px;
-            padding-left : 10px;
+            padding : 10px;
         }
     </style>
 </head>
 <body>
 <table>
-    <h3 style="text-align: center">Caculator</h3>
+    <h3 style="text-align: center" width="100">Caculator</h3>
     <div class="container">
-    <input tyle="text" onclick="call" id="mayTinh">
+    <input tyle="text" id="mayTinh">
     <p>
-        <button class="num" onclick="so()">1</button>
-        <button class="num" onclick="so()">2</button>
-        <button class="num" onclick="so()">3</button>
-        <button class="cal" onclick="phep()">+</button>
+        <button class="num" onclick="so(1)">1</button>
+        <button class="num" onclick="so(2)">2</button>
+        <button class="num" onclick="so(3)">3</button>
+        <button class="cal" onclick="so('+')">+</button>
     </p>
     <p>
-        <button class="num" onclick="so()">4</button>
-        <button class="num" onclick="so()">5</button>
-        <button class="num" onclick="so()">6</button>
-        <button class="cal" onclick="phep()">-</button>
+        <button class="num" onclick="so(4)">4</button>
+        <button class="num" onclick="so(5)">5</button>
+        <button class="num" onclick="so(6)">6</button>
+        <button class="cal" onclick="so('-')">-</button>
     </p>
     <p>
-        <button class="num" onclick="so()">7</button>
-        <button class="num" onclick="so()">8</button>
-        <button class="num" onclick="so()">9</button>
-        <button class="cal" onclick="cal()">x</button>
+        <button class="num" onclick="so(7)">7</button>
+        <button class="num" onclick="so(8)">8</button>
+        <button class="num" onclick="so(9)">9</button>
+        <button class="cal" onclick="so('x')">x</button>
     </p>
     <p>
-        <button class="cal" onclick="xoa()">C</button>
-        <button class="num" onclick="so()">0</button>
-        <button class="cal" onclick="phep()">=</button>
-        <button class="num" onclick="phep()">/</button>
+        <button class="cal" onclick="xxx()">C</button>
+        <button class="num" onclick="so(0)">0</button>
+        <button class="cal" onclick="tinh('=')">=</button>
+        <button class="num" onclick="so('/')">/</button>
     </p>
 </div>
 </table>
+    <script>
+        function so(thamSo)
+        {
+            let conSo = document.getElementById('mayTinh').value;
+            document.getElementById('mayTinh').value += thamSo
+            console.log(conSo)
+        }
+        function tinh() {
+            let bang = document.getElementById('mayTinh').value;
+            let result = eval(bang)
+            document.getElementById('mayTinh').value = result
+        }
+        function xxx() {
+            let xxxx = document.getElementById('mayTinh').value;
+            document.getElementById('mayTinh').value = ""
+
+        }
+    </script>
 </body>
 </html>
