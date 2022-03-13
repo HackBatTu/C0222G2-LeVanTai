@@ -18,23 +18,24 @@
          <option value="USA">USA</option>
     </select><br><br>
 
-    <button onclick="Convert()">Convert</button>
+    <button id=convert onclick="convert()">Convert</button>
 
     <script>
-         function Convert() {
+         function convert() {
              let a = document.getElementById("number").value;
              let b = document.getElementById("money").value;
-              let c = document.getElementById("moneyed").value;
-             if (b == "VietNam" && c == "USA")
-              {
-                let d = Number(a) / 23000
+             let c = document.getElementById("moneyed").value;
+             let result = 0;
+             if (b == "VietNam" && c == "USA") {
+                 result = Number(a) / 23000
+             } else if (b == "HoaKy" && c == "VND") {
+                 result = Number(a) * 23000
+             } else {
+                 result = a;
              }
-             else if ( b =="HoaKy" && c == "VND") {
-                 let d = Number(a) * 23000
-              }
-             else { d = a }
 
-              document.write( '  = ' + d) }
+             document.getElementById("convert").innerText = result;
+         }
 </script>
 </body>
 </html>

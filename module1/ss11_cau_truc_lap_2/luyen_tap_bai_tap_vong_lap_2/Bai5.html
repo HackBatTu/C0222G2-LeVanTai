@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tien_gui = parseInt(prompt('nhập vào tiền gửi ban đầu'));
+    let so_thang = parseInt(prompt('nhập vào số tháng'));
+    let tien_lai = parseInt(prompt('nhập vào tiền lãi hàng tháng'));
+    let tong_lai = tien_gui;
+
+    for (let i = 1; i <= so_thang; i++) {
+        tong_lai *= (1 + tien_lai / 100);
+    }
+    document.write(tong_lai);
+</script>
+</body>
+</html>

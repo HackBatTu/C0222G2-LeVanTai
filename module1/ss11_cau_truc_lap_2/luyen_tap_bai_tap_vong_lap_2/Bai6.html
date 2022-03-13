@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = 10;
+    for (let i = num / 2; i <= num; i += 2) {
+        for (let j = 1; j < num - i; j += 2) {
+            document.write("&nbsp&nbsp&nbsp");
+        }
+        for (j = 1; j <= i; j++) {
+            document.write("*");
+        }
+        for (j = 1; j <= num - i; j++) {
+            document.write("&nbsp");
+        }
+        for (j = 1; j <= i; j++) {
+            document.write("*");
+        }
+        document.write("<br/>");
+    }
+
+    for (i = num; i >= 1; i--) {
+        for (j = i; j < num; j++) {
+            document.write("&nbsp&nbsp");
+        }
+        for (j = 1; j <= (i * 2) - 1; j++) {
+            document.write("*");
+        }
+        document.write("<br/>");
+    }
+
+</script>
+</body>
+</html>

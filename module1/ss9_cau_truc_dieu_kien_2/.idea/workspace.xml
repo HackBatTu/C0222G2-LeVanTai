@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="228a4ea3-8334-4a84-bc5b-7e9aa32a5aea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_1/Bai1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_1/Bai2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_1/Bai3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_1/Bai4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_1/Bai5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_1/Bai6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_1/Bai7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_1/Bai8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/Bai1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/Bai2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/Bai3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/Bai4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/Bai5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/luyen_tap_bai_tap_vong_lap_2/Bai6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/bai_tap/HienThiSoNguyenToDauTien.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss11_cau_truc_lap_2/bai_tap/HienThiSoNguyenToDauTien.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap/MayTinhDonGian.html" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap/MayTinhDonGian.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="26CYxqDmEhVir2iEyJZXrrX6nc6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="228a4ea3-8334-4a84-bc5b-7e9aa32a5aea" name="Default Changelist" comment="" />
+      <created>1646929284205</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646929284205</updated>
+      <workItem from="1646929285369" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>
