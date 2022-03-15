@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let V = parseInt(prompt('nhập số nguyên V '))
+    let flag = false;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (V === arr[i]) {
+            flag = true;
+            arr.splice(arr[i - 1], 1);
+            arr.push(0);
+            break;
+        }
+    }
+    if (flag === true) {
+        alert("V is in the array");
+
+    } else {
+        alert("V is not in the array");
+    }
+    console.log(arr)
+</script>
+</body>
+</html>

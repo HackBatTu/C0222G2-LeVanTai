@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [ "chicken" , 1 , 4 , 6 ,8, "dog"];
+    let first = 0 ;
+    let last = arr.length-1;
+
+    while ( first < last){
+        let a = arr[first];
+        arr[first] = arr[last];
+        arr[last] = a ;
+        first++;
+        last--;
+    } document.write(arr)
+</script>
+</body>
+</html>

@@ -5,22 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-    <script>
-        let phamvi = Number(prompt("Trò chơi đoán số từ 0 - n"))
-        let nhapso = Number(prompt("Nhập vào số muốn đoán"))
-        let soRamdom
-        if(phamvi){
-            soRamdom = Math.floor(Math.random()*phamvi)
-            if(soRamdom == nhapso){
-                alert("Bạn đã đoán đúng")
-            }else{
-                while (soRamdom != nhapso){
-                    alert("Bạn đoán sai số đúng là "+soRamdom)
-                    nhapso = Number(prompt("Nhập vào số muốn đoán"))
-                }
-                alert("Bạn đoán đúng")
+<script>
+    let phamVi = Number(prompt("Trò chơi đoán số từ 0 - n"))
+    let nhapSo = Number(prompt("Nhập vào số muốn đoán"))
+    let soRamdom = 1
+    if (phamVi) {
+        soRamdom = Math.floor(Math.random() * phamVi);
+        if (soRamdom == nhapSo) {
+            alert("Bạn đã đoán đúng")
+        } else {
+            while (soRamdom > nhapSo || soRamdom < nhapSo) {
+                alert("Bạn đoán sai số đúng là " + soRamdom)
+                nhapSo = Number(prompt("Nhập vào số muốn đoán"))
             }
+            alert("Bạn đoán đúng")
         }
-    </script>
+    }
+</script>
 </body>
 </html>

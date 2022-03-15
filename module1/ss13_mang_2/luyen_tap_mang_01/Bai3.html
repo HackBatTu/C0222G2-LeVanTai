@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [2, 3, 4, 6, 7, 33, 23, 56, 12, 18];
+    let max = 0;
+    let tong = 0;
+    let soTb = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        tong += arr[i] ;
+        soTb = tong/arr.length;
+        if (max < arr[i]) {
+            max = arr[i]
+        }
+    }
+    document.write("max = " ,max , "<br>");
+    document.write("soTb= " , soTb );
+</script>
+</body>
+</html>

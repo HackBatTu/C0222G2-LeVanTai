@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 'con ga';
+    let b = 'con ga';
+    let flag = false;
+
+    if (a.length === b.length) {
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] === b[i]) {
+                flag = true
+            } else {
+                flag = false
+            }
+        }
+        if (flag === true) {
+            console.log("same")
+        } else {
+            console.log("not same")
+        }
+    } else {
+        alert('the length is not equal');
+    }
+</script>
+</body>
+</html>
