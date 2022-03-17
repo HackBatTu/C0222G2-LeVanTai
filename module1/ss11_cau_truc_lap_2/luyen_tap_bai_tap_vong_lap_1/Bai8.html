@@ -11,7 +11,7 @@
     let soRamdom = 1
     if (phamVi) {
         soRamdom = Math.floor(Math.random() * phamVi);
-        if (soRamdom == nhapSo) {
+        if (soRamdom === nhapSo) {
             alert("Bạn đã đoán đúng")
         } else {
             while (soRamdom > nhapSo || soRamdom < nhapSo) {

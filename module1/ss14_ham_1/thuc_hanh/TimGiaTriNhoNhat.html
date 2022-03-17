@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function minArr(arr){
+        if(arr.length === 0)
+            return -1;
+        let min = arr[0];
+
+        for(let i = 1 ; i < arr.length ; i++){
+            if (arr[i]< min){
+                 min = arr[i];
+            }
+        } return min;
+    }
+
+    let arr1 = [1,2,3,4,5,6,7]
+    let min = minArr(arr1);
+    alert(min)
+</script>
+</body>
+</html>

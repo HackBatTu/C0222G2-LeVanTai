@@ -6,8 +6,8 @@
 </head>
 <body>
 <script>
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    let V = parseInt(prompt('nhập số nguyên V '))
+    let arr = [1, 2, 3, 'a', 5, 6, 7, 8, 9, 10];
+    let V = prompt('nhập số nguyên V ')
     let flag=false;
     for (let i = 0; i < arr.length; i++) {
         if (V === arr[i]) {
@@ -15,7 +15,7 @@
             break;
         }
     }
-    if(flag==true){
+    if(flag === true){
         alert("V is in the array");
     }
     else{

@@ -6,25 +6,28 @@
 </head>
 <body>
 <script>
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    let V = parseInt(prompt('nhập số nguyên V '))
+    let arr = [1, 2, 4, 4, 4, 6, 7, 8, 9, 10];
+    let V = parseInt(prompt('enter V '));
     let flag = false;
 
     for (let i = 0; i < arr.length; i++) {
         if (V === arr[i]) {
             flag = true;
-            arr.splice(arr[i - 1], 1);
-            arr.push(0);
-            break;
         }
     }
-    if (flag === true) {
-        alert("V is in the array");
 
+    if (flag === true) {
+        for (let i = 0; i < arr.length; i++) {
+            if (V === arr[i]) {
+                alert("V is in the array");
+                arr.splice( i , 1);
+                arr.push(0);
+            }
+        }
     } else {
         alert("V is not in the array");
-    }
-    console.log(arr)
+    }console.log(arr)
+
 </script>
 </body>
 </html>

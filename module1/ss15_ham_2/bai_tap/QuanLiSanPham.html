@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Add New Product</h2>
+<input type="text" id="test" placeholder="New Product">
+<button type="button" onclick="addProduct()" value="Add" id="addNew">Add</button>
+
+<h2>Add New Product</h2>
+<span>Product Name</span>
+<span style="float : right">products</span>
+<hr>
+<p id="list"></p>
+<button type="button" onclick="editProduct()" > Edit</button>
+<button type="button" onclick="deleteProduct()" >Delete</button>
+
+
+<script>
+    let sanPham = ['Mazda', 'Toyota', 'Mezcedes', 'Ford', 'Lexus', 'Hyundai', 'Porsche', 'VinFast', 'gà'];
+
+    function display(sanPham) {
+        let x = "";
+        x += '<table border="1">'
+        for (let i = 0; i < sanPham.length; i++) {
+            x+= '<tr>'
+            x+= '<td>' + x + (i + 1) + ":" + "" + sanPham[i] + '<br>'+ '</td>';
+            x+= '</tr>'
+        }
+        x += '</table>'
+        return x;
+
+    }
+
+    function addProduct() {
+        let newAdd = document.getElementById("test").value;
+        sanPham.push(newAdd);
+        document.getElementById("list").innerHTML = display(sanPham)
+    }
+
+    function editProduct() {
+        let newName = document.getElementById("test").value
+        sanPham[i] = newName
+        document.getElementById("list").innerHTML = display(sanPham)
+    }
+
+    function deleteProduct() {
+        let dell = document.getElementById("test").value
+        sanPham.slice(dell - 1, 1)
+        document.getElementById("list").innerHTML = display(sanPham)
+    }
+
+    document.getElementById("list").innerHTML = display(sanPham)
+
+</script>
+
+</body>
+</html>

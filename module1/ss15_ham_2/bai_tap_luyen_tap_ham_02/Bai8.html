@@ -6,15 +6,12 @@
 </head>
 <body>
 <script>
-    let a = prompt();
-    let b = prompt();
-
-    if (a===b){
-        console.log(" same")
-    }else {
-        console.log('not same')
+    function soNguyen(array) {
+        array.reverse()
+        return array
     }
-
+    let array = [1,3,2,4,5]
+    console.log(soNguyen(array))
 </script>
 </body>
 </html>

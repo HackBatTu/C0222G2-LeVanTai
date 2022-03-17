@@ -6,20 +6,18 @@
 </head>
 <body>
 <script>
-    let n = 0
-    let count = 0
 
-    while( count <= 20) {
+    function isPrime(numBer) {
         flag = true
-        if (number < 2) {
+        if (numBer < 2) {
             flag = false
-        } else if (number === 2) {
+        } else if (numBer === 2) {
             flag = true
-        } else if (number % 2 === 0) {
+        } else if (numBer % 2 === 0) {
             flag = false
         } else {
-            for (let i = 3; i < Math.sqrt(number); i += 2) {
-                if (number % i === 0) {
+            for (let i = 3; i < Math.sqrt(numBer); i += 2) {
+                if (numBer % i === 0 ) {
                     flag = true
                     break
                 }
@@ -30,7 +28,11 @@
         } else {
             console.log('number không phải là số nguyên tố ')
         }
+
     }
+    let number = prompt('nhập số')
+    isPrime(number)
+
 </script>
 </body>
 </html>

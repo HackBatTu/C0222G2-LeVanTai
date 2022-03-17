@@ -5,26 +5,36 @@
     <title>Title</title>
 </head>
 <body>
-<div> Từ Điển :</div>
+<p> Từ Điển :</p>
 <input type="text" id="dictionary">
-<input type="button" value="tìm kiếm" onclick="tuDien()">
+<button value="tìm kiếm" onclick="tuDien()">Tìm Kiếm</button>
 
 <script>
 
     function tuDien() {
         let tuVietnamese = ["chó", "gà", "mèo", "chim"];
         let tuEnglish = ["dog", "chicken", "cat", "bird"];
+        let inRa = "";
 
         let input = document.getElementById('dictionary').value;
 
         for (let i = 0; i < tuVietnamese.length; i++) {
             if (tuVietnamese[i] === input) {
-                document.write(tuEnglish[i])
-            } else if (tuEnglish[i] === input) {
-                document.write(tuVietnamese[i])
+                inRa = tuEnglish[i]
+                break
+            } else {
+                inRa = 'not found'
+            }
+            if (tuEnglish[i] === input) {
+                inRa = tuVietnamese[i]
+                break
+            } else {
+                inRa = 'not found'
             }
         }
+        document.write(inRa);
     }
+
 </script>
 
 </body>

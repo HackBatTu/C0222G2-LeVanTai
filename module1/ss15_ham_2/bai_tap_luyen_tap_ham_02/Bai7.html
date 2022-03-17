@@ -6,15 +6,14 @@
 </head>
 <body>
 <script>
-    let a = prompt();
-    let b = prompt();
-
-    if (a===b){
-        console.log(" same")
-    }else {
-        console.log('not same')
+    function swap(a,b) {
+        let n=0;
+        n=a;
+        a=b
+        b=n
+        console.log(a,b)
     }
-
+    swap(5,8)
 </script>
 </body>
 </html>

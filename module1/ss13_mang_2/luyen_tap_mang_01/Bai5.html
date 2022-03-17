@@ -6,11 +6,12 @@
 </head>
 <body>
     <script>
-        let str =  ("-10,-4,-7,8,-12,19,21,a,b");
+        let str =  "-10,-4,-7,8,-12,19,21,a,b" ;
+        let arr = str.split(",")
         let DemSoAm = 0
 
-        for ( let i = 0 ; i < str.length ; i++){
-            if (str[i] < 0 ){
+        for ( let i = 0 ; i < arr.length ; i++){
+            if (arr[i] < 0 ){
                 DemSoAm += 1;
             }
         } document.write(DemSoAm)

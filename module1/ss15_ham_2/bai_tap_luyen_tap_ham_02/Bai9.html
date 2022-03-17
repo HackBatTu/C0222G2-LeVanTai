@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTra(arr, kyTu) {
+        let count = 0;
+        let flag = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === kyTu) {
+                flag = true;
+                break;
+            }
+            flag = false;
+
+        }
+        if (flag === true) {
+            for (let i = 0; i < arr.length ; i++) {
+                if (kyTu === arr[i]) {
+                    count++;
+                }
+            }
+        } else {
+            return -1;
+        }
+        return count;
+    }
+
+        arr = ['a', 'b', 'c', 'd', 'e', 'f']
+        console.log(kiemTra(arr, prompt("nhập ký tự: ")));
+</script>
+</body>
+</html>
