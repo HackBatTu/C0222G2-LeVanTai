@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+    <style>
+        button {
+            background-color: #50af50;
+            padding: 7px;
+            color: white;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: orange;
+        }
+
+        input {
+            width: 50%;
+            padding: 7px;
+        }
+
+        table {
+            width: 80%;
+            border: none;
+            border-collapse: collapse;
+        }
+
+        table tr:nth-child(even) td {
+            background-color: gainsboro;
+        }
+    </style>
+</head>
+<body>
+<label><h3>Add New Product</h3></label>
+<div style="background-color:#f2f2f2 ; padding: 20px; width : 70%">
+    <input id="newProduct" type="text" placeholder="New Product">
+    <button onclick="addNewProduct()">Add</button>
+</div>
+<h3>Display All Product</h3>
+<div id="table">
+
+</div>
+<script>
+    let check = true;
+    let indexEdit;
+    let listProduct = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", "Apple iPhone 6S", "Xiaomi Mi 5s Plus", "Apple iPhone 8 Plus", "Fujitsu F-04E", "Oppo A71"];
+
+    displayProduct(listProduct);
+
+    function displayProduct(product) {
+        let table = "<table id = 'display'>";
+        table += "<tr>"
+            + "<td align='left'>" + "<b>" + "Product Name" + "</b>" + "</td>"
+            + "<td align='right' colspan='2' style = 'color: #a52a2a'> " + "<b>" + listProduct.length + " products" + "</b>" + "</td>"
+            + "</tr >";
+        for (let i = 0; i < listProduct.length; i++) {
+            table += "<tr id=i>";
+            table += "<td>" + listProduct[i] + "</td>";
+            table += "<td>" + "<button onclick='editProduct(" + i + ")'>Edit</button>" + "</td>";
+            table += "<td>" + "<button onclick='deleteProduct(" + i + ")' id='delProduct'>Delete</button>" + "</td>";
+            table += "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("table").innerHTML = table;
+    }
+
+    function addNewProduct() {
+        if (check === true) {
+
+            newProduct = document.getElementById("newProduct").value;
+            listProduct.push(newProduct);
+            displayProduct(listProduct);
+            document.getElementById("newProduct").value = "";
+        } else {
+            newProduct = document.getElementById("newProduct").value;
+            listProduct[indexEdit] = newProduct;
+            check = true;
+            document.getElementById("newProduct").value = "";
+
+        }
+        displayProduct()
+    }
+
+    function editProduct(index) {
+        document.getElementById("newProduct").value = listProduct[index];
+        check = false;
+        indexEdit = index;
+        displayProduct(listProduct);
+
+    }
+
+
+    function deleteProduct(index) {
+        listProduct.splice(index, 1);
+        displayProduct();
+    }
+</script>
+</body>
+</html>

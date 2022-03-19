@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt('nhập bán kính : '))
+    class Circle {
+        constructor(radius , color ) {
+            this.radius = radius;
+            this.color = color;
+        }
+        getRadius(){
+            return this.radius;
+        }
+        getColor(){
+            return this.color;
+        }
+        getArea(){
+            return Math.PI * this.radius * this.radius ;
+        }
+        setRadius(radius){
+            this.radius = radius;
+        }
+        setColor(color){
+            this.color = color;
+        }
+
+
+
+
+    }
+    let circle = new Circle(a)
+    let radius = circle.getRadius()
+    let area = circle.getArea()
+    console.log("radius: " + radius + "; area: " + area);
+
+</script>
+</body>
+</html>

@@ -3,56 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .editsp {
+            background-color: green;
+            color: white;
+            width: 400px;
+        }
+
+        .edits {
+            background-color: orange;
+            color: whitesmoke;
+            width: 100px;
+        }
+        .tables {
+            border: none;
+            width : 50%
+        }
+
+    </style>
 </head>
 <body>
-<h2>Add New Product</h2>
+<h2 style="color: blue">Add New Product</h2>
 <input type="text" id="test" placeholder="New Product">
-<button type="button" onclick="addProduct()" value="Add" id="addNew">Add</button>
 
-<h2>Add New Product</h2>
-<span>Product Name</span>
-<span style="float : right">products</span>
+<button type="button" onclick="addProduct()" value="Add" id="addNew" style="background-color: blue">Add</button>
+
+<h3>New Product</h3>
+<span>Product Name</span><span id = "soLuong">products</span>
+
 <hr>
 <p id="list"></p>
-<button type="button" onclick="editProduct()" > Edit</button>
-<button type="button" onclick="deleteProduct()" >Delete</button>
 
 
 <script>
     let sanPham = ['Mazda', 'Toyota', 'Mezcedes', 'Ford', 'Lexus', 'Hyundai', 'Porsche', 'VinFast', 'gà'];
 
     function display(sanPham) {
+        console.log(sanPham)
         let x = "";
-        x += '<table border="1">'
+        x += '<table class="tables">'
         for (let i = 0; i < sanPham.length; i++) {
-            x+= '<tr>'
-            x+= '<td>' + x + (i + 1) + ":" + "" + sanPham[i] + '<br>'+ '</td>';
-            x+= '</tr>'
+            x += "<tr><td class='editsp'>" + sanPham[i] + "</td>" +
+                "<td ><button class='edits' onclick=" + "deleteProduct(" + i + ")" + ">Delete</button></td>" +
+                "<td ><button class='edits' onclick=" + "editProduct(" + i + ")" + ">Edit</button></td></tr>";
         }
         x += '</table>'
-        return x;
-
+        return x ;
     }
+
+    document.getElementById("list").innerHTML = display(sanPham);
 
     function addProduct() {
         let newAdd = document.getElementById("test").value;
         sanPham.push(newAdd);
-        document.getElementById("list").innerHTML = display(sanPham)
+        document.getElementById("list").innerHTML = display(sanPham);
     }
 
-    function editProduct() {
-        let newName = document.getElementById("test").value
+    function editProduct(i) {
+        let newName = prompt(document.getElementById("test").value)
         sanPham[i] = newName
+        document.getElementById("list").innerHTML = display(sanPham);
+
+    }
+
+    function deleteProduct(i) {
+        sanPham.splice( i , 1 )
         document.getElementById("list").innerHTML = display(sanPham)
     }
 
-    function deleteProduct() {
-        let dell = document.getElementById("test").value
-        sanPham.slice(dell - 1, 1)
-        document.getElementById("list").innerHTML = display(sanPham)
-    }
 
-    document.getElementById("list").innerHTML = display(sanPham)
 
 </script>
 

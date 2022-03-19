@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt(' nhập vào độ C : '))
+    class Temperature {
+        constructor(c) {
+            this.c = c;
+        }
+        getC(){
+            return this.c;
+        }
+        getF(){
+            return (this.c*(9/5)+32);
+        }
+        getK(){
+            return this.c + 273.15;
+        }
+    }
+    let temperature = new Temperature(a);
+    let doc = temperature.getC();
+    let dof = temperature.getF();
+    let dok = temperature.getK();
+    document.write( 'Nếu độ C là : ' + doc+ '<br>' + ' Thì độ F là : '+ dof +'<br>' + ' Và độ K là : ' + dok )
+
+
+
+</script>
+</body>
+</html>

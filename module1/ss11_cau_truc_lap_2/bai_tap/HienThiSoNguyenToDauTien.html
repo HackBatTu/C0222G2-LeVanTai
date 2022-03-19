@@ -6,31 +6,71 @@
 </head>
 <body>
 <script>
-    let n = 0
-    let count = 0
-
-    while( count <= 20) {
-        flag = true
-        if (number < 2) {
-            flag = false
-        } else if (number === 2) {
-            flag = true
-        } else if (number % 2 === 0) {
-            flag = false
+    let n = 0;// số tự nhiên cần đi kiểm tra
+    let count = 0; // đếm số lượng số nguyên tố tìm thấy
+    while (count <= 20) {
+        // đi tìm số nguyên tố => kiểm tả từ số tự nhiên bắt từ o'
+        // kiểm tra n có phải số nguyên tố hay không?
+        let flag = true; // mặc định n là SNT;
+        if (n < 2) {
+            flag = false;
         } else {
-            for (let i = 3; i < Math.sqrt(number); i += 2) {
-                if (number % i === 0) {
-                    flag = true
-                    break
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    flag = false; // không phải là số nguyên tố;
+                    break;
                 }
             }
         }
         if (flag === true) {
-            console.log('number là số nguyên tố ')
-        } else {
-            console.log('number không phải là số nguyên tố ')
+            count++;
+            document.writeln(n);
+        }
+        n++; // tăng 1 để kiểm tra lại số thiếp theo
+    }
+
+    /// kiểm tra 1 số có
+
+    // cách 1: KTSNT
+    let n = prompt("nhập vào 1 số cần kiểm tra");
+    let count =0;
+    for (let i = 1; i <=n ; i++) {
+        if (n%i==0){
+            count++; // count = count +1;
         }
     }
+    if (count==2){
+        alert(n + " là số nguyên tố");
+    }else {
+        alert("không phải là số nguyên tố");
+    }
+    // // cách 2:
+    // let n = prompt("nhập vào 1 số cần kiểm tra");
+    // let flag =true; // mặc định n là SNT;
+    // for (let i = 2; i <n; i++) {
+    //     if (n%i==0){
+    //         flag=false; // không phải là số nguyên tố;
+    //         break;
+    //     }
+    // }
+    // if (flag==true){
+    //     alert(n+ " là số nguyên tố");
+    // }else {
+    //     alert(n + " ko phải là sNT")
+    // }
+    //
+    // function kiemTraSNT(n) {
+    //     if (n < 2) {
+    //         return false;
+    //     } else {
+    //         for (let i = 2; i < n; i++) {
+    //             if (n % i == 0) {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // }
 </script>
 </body>
 </html>

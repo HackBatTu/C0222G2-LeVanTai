@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(baterry, message, messageSent, messageReceived, status, id) {
+            this.baterry = baterry;
+            this.message = message;
+            this.messageSent = messageSent;
+            this.messageReceived = messageReceived;
+            this.status = status;
+            this.id = id;
+        }
+        getBaterry() {
+            return this.baterry;
+        }
+        getMessage() {
+            return this.message;
+        }
+        getMessageSent() {
+            return this.messageSent;
+        }
+        getMessageReceived() {
+            return this.messageReceived;
+        }
+        getStatus() {
+            return this.status;
+        }
+        getId() {
+            return this.id;
+        }
+        setBaterry(baterry) {
+            this.baterry = baterry;
+        }
+        setMessage(message) {
+            this.message = message;
+        }
+        setMessageSent(messageSent) {
+            this.messageSent = messageSent;
+        }
+        setMessageReceived(messageReceived) {
+            this.messageReceived = messageReceived;
+        }
+        setStatus(status) {
+            this.status = status;
+        }
+        setId(id) {
+            this.id = id;
+        }
+    }
+    let mobile = new Mobile(baterry, message, messageSent, messageReceived, status, idNokia);
+    let baterry = 2;
+    let message = "Show Message";
+    let messageSent = ["Message Sent"];
+    let messageReceived = ["Message Recived"];
+    let status = false;
+    let idNokia = "Nokia";
+   
+</script>
+</body>
+</html>

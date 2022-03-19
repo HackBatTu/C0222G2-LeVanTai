@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" ></canvas>
+    <script>
+        let a = parseFloat(prompt('nhập chiều dài'))
+        let b = parseFloat(prompt('nhập chiều rộng'))
+
+        class Rectangle {
+            constructor(length , width ) {
+                this.length = length;
+                this.width = width;
+            }
+            getLength(){
+                return this.length;
+            }
+            getWidth(){
+                return this.width;
+            }
+            getArea(){
+                return this.width*this.length;
+            }
+            getPeri(){
+                return (this.width*this.length)/2 ;
+            }
+
+        }
+
+        let rectangle = new Rectangle(a, b)
+        let length = rectangle.getLength()
+        let width = rectangle.getWidth()
+        let area = rectangle.getArea()
+        let Peri = rectangle.getPeri()
+
+        console.log('area = '+ area + ' '+'Peri = ' + Peri)
+
+
+        function createRectangles(){
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.fillStyle='#fa4b2a';
+            ctx.fillRect(20, 20, a, b);
+        }
+
+        createRectangles();
+
+
+    </script>
+</body>
+</html>
