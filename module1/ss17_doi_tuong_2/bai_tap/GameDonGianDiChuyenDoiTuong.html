@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+
+    class Hero {
+        constructor(image, top, left, size) {
+            this.image = image
+            this.top = top
+            this.left = left
+            this.size = size
+        }
+        getHeroElement(){
+            return '<img width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        }
+        moveRight(){
+            this.left += 20;
+            console.log('ok : '+ this.left)
+        }
+
+    }
+    let hero = new Hero("pikachu.png" , 200 , 50 , 200);
+    function start(){
+        if(hero.left < window.innerWidth - hero.size){
+            hero.moveRight();
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 2000)
+    }
+    start();
+
+
+
+</script>
+</body>
+</html>

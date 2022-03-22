@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="tom"></div>
+<div id="jerry"></div>
+<script>
+    class Rat {
+        constructor(name , weight , speed , status) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.status = status;
+        }
+
+        getName() {
+            return this.name
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        setWeight(weight) {
+            this.weight = weight
+        }
+
+        getSpeed() {
+            return this.speed
+        }
+
+        setSpeed(speed) {
+            this.speed = speed
+        }
+        say(text){
+            console.log('chít chít :' +text)
+        }
+
+    }
+
+    class Cat {
+        constructor(name , weight , speed) {
+            this.name = name
+            this.weight = weight
+            this.speed = speed
+        }
+
+        getName() {
+            return this.name
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        setWeight(weight) {
+            this.weight = weight
+        }
+
+        getSpeed() {
+            return this.speed
+        }
+
+        setSpeed(speed) {
+            this.speed= speed
+        }
+        say(text){
+            console.log('meo meo : '+ text)
+        }
+        eatMouse(mouse){
+            if(mouse.status == ' song'){
+
+            }else {
+                this.say('sống đâu mà ăn')
+            }
+        }
+        catchMouse(mouse){
+            if(this.getSpeed()> mouse.speed){
+                this.weight += mouse.weight
+                this.say(' bắt được rồi nhé')
+            }else {
+                mouse.say('đố anh bắt được em')
+            }
+        }
+        
+    }
+    let tom = new Cat("Tom",11,13)
+
+    let jerry1 = new Rat("Jerry1",3,10,"song");
+    let jerry2 = new Rat("Jerry2",3,11,"song");
+    let jerry3 = new Rat("Jerry3",3,0,"chet");
+    let jerry4 = new Rat("Jerry4",3,14,"song");
+
+    let jerrys = [jerry1,jerry2,jerry3,jerry4];
+
+
+    for (let jerry of jerrys) {
+        tom.catchMouse(jerry);
+    }
+    console.log("khối lượng của mèo "+ tom.getWeight())
+
+
+</script>
+
+</body>
+</html>

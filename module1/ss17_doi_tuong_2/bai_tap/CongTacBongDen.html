@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="On/Off" onclick="congTac(switchh)">
+<script>
+    class Lamp {
+        constructor() {
+            this.status = false
+        }
+        turnOn() {
+            this.status = true
+            console.log('đèn đã bật')
+        }
+        turnOff() {
+            this.status = false
+            console.log('đèn tắt')
+        }
+
+    }
+
+    class Switchh {
+        constructor() {
+            this.status = false
+            this.lamp = null
+        }
+        // phương thức nối công tắc vs đèn
+        connectToLamp(lamp) {
+            this.lamp = lamp
+        }
+        switchOn() {
+            this.lamp.turnOn()
+        }
+        switchOff() {
+            this.lamp.turnOff()
+        }
+        getStatus() {
+            return this.status
+        }
+        setStatus(status) {
+            this.status = status;
+        }
+    }
+
+    let lamp = new Lamp()
+    let switchh = new Switchh()
+
+    switchh.connectToLamp(lamp) //nối công tắc với bóng đèn
+    // for(let i = 0; i<10 ; i++){
+    // switchh.switchOn();
+    // switchh.switchOff();
+    // }
+
+    function congTac(obj) {
+        if (obj.getStatus()) {
+            obj.switchOn();
+            obj.setStatus(false);
+        } else {
+            obj.switchOff();
+            obj.setStatus(true);
+
+        }
+    }
+    congTac(switchh);
+
+
+</script>
+</body>
+</html>

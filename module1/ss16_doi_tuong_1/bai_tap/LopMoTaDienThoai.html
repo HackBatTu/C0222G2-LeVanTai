@@ -6,60 +6,64 @@
 </head>
 <body>
 <script>
-    class Mobile {
-        constructor(baterry, message, messageSent, messageReceived, status, id) {
-            this.baterry = baterry;
-            this.message = message;
-            this.messageSent = messageSent;
-            this.messageReceived = messageReceived;
-            this.status = status;
-            this.id = id;
+
+    class DienThoai {
+        constructor() {
+            this.trangThai = true; // mặc định mỏ
+            this.pin = 100;    // khở tạo mặc định đầy pin
+            this.vungNhoSoanThao = "";
+            this.vungNhoTinDaGui = [];
+            this.vungNhoTinDen = [];
         }
-        getBaterry() {
-            return this.baterry;
+        getTrangThai() {
+            if (this.trangThai) {
+                console.log("điện thoại đang bật");
+            } else {
+                console.log("điện thoại đang tắt");
+            }
         }
-        getMessage() {
-            return this.message;
+        batTat() {
+            this.trangThai = !this.trangThai;
         }
-        getMessageSent() {
-            return this.messageSent;
+        sacPin() {
+            this.pin = 100;
         }
-        getMessageReceived() {
-            return this.messageReceived;
+        soanTin(text) {
+            if (this.trangThai && this.pin > 10) {
+                this.vungNhoSoanThao = text;
+            } else {
+                console.log("điện gần hết pin. Vui long sạc pin")
+            }
+            this.pin--;
         }
-        getStatus() {
-            return this.status;
+        nhanTin(message) {
+            this.vungNhoTinDen = message;
         }
-        getId() {
-            return this.id;
+        guiTin(mobile, message) {
+            this.soanTin(message);
+            this.vungNhoTinDaGui.push(this.vungNhoSoanThao); // đưa tin nhắn soản thảo vào trong vùng nhớ đã gửi
+            mobile.nhanTin(this.vungNhoSoanThao); // nhận tin nhắn từ điện thoại gộc
+            this.vungNhoSoanThao = "";  // gửi xong thì xóa
         }
-        setBaterry(baterry) {
-            this.baterry = baterry;
-        }
-        setMessage(message) {
-            this.message = message;
-        }
-        setMessageSent(messageSent) {
-            this.messageSent = messageSent;
-        }
-        setMessageReceived(messageReceived) {
-            this.messageReceived = messageReceived;
-        }
-        setStatus(status) {
-            this.status = status;
-        }
-        setId(id) {
-            this.id = id;
+        ​
+        hienThiTinDaNhan() {
+            console.log(this.vungNhoTinDen);
+        }​
+        hienThiTinDaGui() {
+            console.log(this.vungNhoTinDaGui)
         }
     }
-    let mobile = new Mobile(baterry, message, messageSent, messageReceived, status, idNokia);
-    let baterry = 2;
-    let message = "Show Message";
-    let messageSent = ["Message Sent"];
-    let messageReceived = ["Message Recived"];
-    let status = false;
-    let idNokia = "Nokia";
-   
+    let nokia = new DienThoai();
+    let iphone = new DienThoai();
+    let sumSung = new DienThoai();
+
+    nokia.guiTin(iphone, "xin chào iphone");
+    iphone.hienThiTinDaNhan();
+    iphone.guiTin(nokia, "mình khỏe. Mình là iphone")
+    nokia.hienThiTinDaNhan();
+    nokia.guiTin(sumSung, "hello samsung");
+    sumSung.hienThiTinDaNhan();
+
 </script>
 </body>
 </html>

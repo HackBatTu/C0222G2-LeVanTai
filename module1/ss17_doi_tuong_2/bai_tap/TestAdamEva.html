@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .mes {
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            height: 50px;
+        }
+        .table {
+            border: none;
+            text-align: center;
+        }
+        .person {
+            background-color: red;
+            color: white;
+        }
+        .clicks {
+            background-color: chartreuse;
+            color: white;
+        }
+        .tao{
+            background-color: red;
+            height: 50px;
+            font-size: 30px;
+        }
+        .in{
+            background-color: #50af50;
+        }
+    </style>
+</head>
+<body>
+<table class="table">
+    <tr>
+        <th colspan="4" class="tao"> Táo </th>
+    </tr>
+    <tr>
+        <td colspan="4" class="in"><span id="khoiLuongTao"></span></td>
+    </tr>
+    <tr>
+        <th colspan="2"><button type="button" onclick="anTao(human1)" class="person"> Adam ăn Táo</button></th>
+        <th colspan="2"> <button type="button" onclick="anTao(human2)" class="person">Eva ăn táo</button></th>
+    </tr>
+    <tr>
+        <td><input type="text" id="adamSay" placeholder="Adam"></td>
+        <td><button type="button" onclick="adamNoi()" class="clicks"> Say </button> </td>
+        <td><input type="text" id="evaSay" placeholder="Eva"></td>
+        <td><button type="button" onclick="evaNoi()" class="clicks"> Say </button> </td>
+    </tr>
+    <tr>
+        <td colspan="2"><div id="messageAdam" class="mes"></div></td>
+        <td colspan="2"><div id="messageEva" class="mes"></div></td>
+    </tr>
+</table>
+<script>
+    class Apple {
+        constructor() {
+            this.khoiLuong = 10
+        }
+        getKhoiLuong(){
+            return this.khoiLuong
+        }
+        setKhoiLuong(khoiLuong){
+            this.khoiLuong = khoiLuong
+        }
+    }
+    class Human{
+        constructor() {
+            this.ten = '';
+            this.gioitinh = '';
+            this.canNang = '';
+            this.apple = null;
+        }
+        setApple(apple){
+            this.apple = apple
+        }
+        getApple(){
+            return this.apple
+        }
+        setTen(ten){
+            this.ten = ten
+        }
+        getTen(){
+            return this.ten
+        }
+        setGioiTinh(gioiTinh){
+            this.gioiTinh = gioiTinh
+        }
+        getGioiTinh(){
+            return this.gioiTinh
+        }
+        setCanNang(canNang){
+            this.canNang = canNang
+        }
+        getCanNang(){
+            return this.canNang
+        }
+        noiChuyen(message) {
+            return message;
+        }
+        anTao(){
+            if (this.apple.getKhoiLuong() > 0){
+                this.setCanNang(Number(this.getCanNang())+1)
+                this.apple.setKhoiLuong(this.apple.getKhoiLuong()-1)
+
+                document.getElementById('khoiLuongTao').innerText= ("người ăn : " + this.getTen() + '\n'+
+                'khối lượng táo : ' + this.apple.getKhoiLuong()+'kg'+ '\n'+
+                'cân nặng :' + this.getCanNang()+ 'kg')
+            }else {
+                document.getElementById('khoiLuongTao').innerText = ('đã ăn hết Táo rồi ')
+            }
+
+        }
+    }
+    let apple = new Apple()
+    let human1 = new Human()
+    let human2 = new Human()
+
+
+    human1.setTen("Adam");
+    human1.setCanNang("80");
+    human1.setGioiTinh("Nam");
+    human1.setApple(apple);
+    // console.log('Tên : ' + human1.getTen()+'\n'+
+    // 'Cân Nặng : '+ human1.getCanNang() +'\n' +
+    //     'Gioi tính : ' + human1.getGioiTinh()+ '\n'+
+    // 'Khối lượng Apple : ' + human1.apple.getKhoiLuong()+ 'kg')
+
+    human2.setTen("Eva");
+    human2.setCanNang("50");
+    human2.setGioiTinh("Nữ");
+    human2.setApple(apple);
+    // console.log('Tên : ' + human2.getTen()+'\n'+
+    //     'Cân Nặng : '+ human2.getCanNang() +'\n' +
+    //     'Gioi tính : ' + human2.getGioiTinh()+ '\n'+
+    //     'Khối lượng Apple : ' + human2.apple.getKhoiLuong()+ 'kg')
+
+
+    function anTao(human) {
+        human.anTao()
+    }
+    function adamNoi() {
+        let message1 = document.getElementById('adamSay').value;
+        document.getElementById("messageAdam").innerHTML = human1.getTen() + ": " + human1.noiChuyen(message1);
+    }
+    function evaNoi() {
+        let message2 = document.getElementById('evaSay').value;
+        document.getElementById("messageEva").innerHTML = human2.getTen() + ": " + human2.noiChuyen(message2);
+    }
+</script>
+</body>
+</html>
