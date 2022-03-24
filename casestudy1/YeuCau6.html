@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .h1{
+            background-color: red;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+        .nhap{
+            background-color: blue;
+            color: white;
+            width: 20%;
+            padding: 5px;
+            margin-left: 250px;
+        }
+        .oTrong{
+            text-align: center;
+
+        }
+
+    </style>
+</head>
+<body>
+<h1 class="h1">
+    Xổ số Anh Tài
+</h1>
+<hr>
+<div class='oTrong'>
+    <div><h3> Mua Vé </h3>
+        <input type="text" id="xs1">
+        <input type="text" id="xs2">
+        <input type="text" id="xs3">
+        <input type="text" id="xs4">
+        <input type="text" id="xs5">
+        <input type="text" id="xs6">
+
+    </div>
+    <div><h3>Kết Qủa</h3>
+        <input type="text" id="so1">
+        <input type="text" id="so2">
+        <input type="text" id="so3">
+        <input type="text" id="so4">
+        <input type="text" id="so5">
+        <input type="text" id="so6">
+
+    </div>
+</div>
+<button type="button" onclick="mua()" class="nhap"> Mua Vé</button>
+<button type="button" onclick="xemKq()" class="nhap">Xem Kết Qủa</button>
+
+</body>
+</html>
+<script>
+    let n = 0
+    function mua() {
+        n =  Number(prompt('lựa chọn của bạn: ' +'\n'+ '1.nhập số muốn mua'+ '\n'+'2.hệ thống tự động'))
+        switch (n) {
+            case 1:
+                alert('tiếp tục để nhập số bạn muốn mua')
+                document.getElementById("xs1").value = parseInt(prompt('nhập 2 số đầu : '))
+                document.getElementById("xs2").value = parseInt(prompt('nhập 2 số tiếp theo : '))
+                document.getElementById("xs3").value = parseInt(prompt('tếp tục nhập 2 số : '))
+                document.getElementById("xs4").value = parseInt(prompt('nhập 2 số tiếp theo : '))
+                document.getElementById("xs5").value = parseInt(prompt('tiếp tục nhập 2 số : '))
+                document.getElementById("xs6").value = parseInt(prompt('nhập 2 số tiếp theo : '))
+                break
+            case 2:
+                alert('hệ thống sẽ tự động mua cho bạn')
+                document.getElementById("xs1").value = Math.floor(Math.random() * 100);
+                document.getElementById("xs2").value = Math.floor(Math.random() * 100);
+                document.getElementById("xs3").value = Math.floor(Math.random() * 100);
+                document.getElementById("xs4").value = Math.floor(Math.random() * 100);
+                document.getElementById("xs5").value = Math.floor(Math.random() * 100);
+                document.getElementById("xs6").value = Math.floor(Math.random() * 100);
+                break
+            default:
+                alert('vui lòng nhập theo yêu cầu')
+                break
+        }
+    }
+    function xemKq() {
+        document.getElementById("so1").value = Math.floor(Math.random() * 100);
+        document.getElementById("so2").value = Math.floor(Math.random() * 100);
+        document.getElementById("so3").value = Math.floor(Math.random() * 100);
+        document.getElementById("so4").value = Math.floor(Math.random() * 100);
+        document.getElementById("so5").value = Math.floor(Math.random() * 100);
+        document.getElementById("so6").value = Math.floor(Math.random() * 100);
+        setTimeout(xemKq,3000)
+    }
+
+</script>

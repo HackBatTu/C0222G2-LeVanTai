@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // bài 2
+    // let s = 'cabca'
+    // let arr = s.split('')
+    // for(let i =0 ; i< arr.length; i++){
+    //     if(arr[i])
+    // }
+
+
+    //bài 3
+    let s1 = 'aabcc' ;arr1 = s1.split('')
+    let s2 = 'adcaa' ;arr2 = s2.split('')
+    let arr = []
+    let count= 0;
+
+    for(let i= 0; i<arr1.length; i++){
+        for (let j = 0 ; j<arr2.length ; j++){
+            if(arr1[i] == arr2[j]){
+                arr.push(arr1[i])
+                arr2.splice( j ,1)
+                count++
+            }
+        }
+    }
+    console.log(count , ' kí tự ' + arr)
+</script>
+</body>
+</html>

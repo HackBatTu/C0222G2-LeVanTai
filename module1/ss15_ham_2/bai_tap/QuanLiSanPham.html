@@ -29,7 +29,7 @@
 <button type="button" onclick="addProduct()" value="Add" id="addNew" style="background-color: blue">Add</button>
 
 <h3>New Product</h3>
-<span>Product Name</span><span id = "soLuong">products</span>
+<span>Product Name</span><span id = "soLuong">product</span>
 
 <hr>
 <p id="list"></p>
@@ -44,14 +44,15 @@
         x += '<table class="tables">'
         for (let i = 0; i < sanPham.length; i++) {
             x += "<tr><td class='editsp'>" + sanPham[i] + "</td>" +
-                "<td ><button class='edits' onclick=" + "deleteProduct(" + i + ")" + ">Delete</button></td>" +
-                "<td ><button class='edits' onclick=" + "editProduct(" + i + ")" + ">Edit</button></td></tr>";
+                "<td ><button class='edits' onclick="+"deleteProduct("+i+")"+">Delete</button></td>" +
+                "<td ><button class='edits' onclick="+"editProduct("+i+")"+">Edit</button></td></tr>";
         }
         x += '</table>'
         return x ;
     }
 
     document.getElementById("list").innerHTML = display(sanPham);
+    document.getElementById("soLuong").innerHTML = display(sanPham.length);
 
     function addProduct() {
         let newAdd = document.getElementById("test").value;
