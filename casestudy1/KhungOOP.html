@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .table {
+            border: none;
+            width: 52%;
+
+        }
+        .input {
+            width: 10%;
+            border-collapse: collapse;
+            border: solid 2px;
+        }
+        .h1{
+            width: 50%;
+
+        }
+        .click{
+            background-color: black;
+            color: white;
+            width: 100%;
+        }
+        .add{
+            background-color: black;
+            color: white;
+        }
+        .sl{
+            position: absolute;
+            right: 400px;
+            width: 200px;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<h1 class="h1"> Danh sách</h1>
+
+<span>Sản Phẩm : </span>
+<span id="soLuong" class="sl"></span>
+<hr>
+
+<input type="text" id="" placeholder="" class="input">
+<input type="text" id="" placeholder="" class="input">
+<input type="text" id="" placeholder="" class="input">
+<input type="text" id="" placeholder="" class="input">
+
+<input type="button" value="Thêm Mới" onclick="addSp()" class="add">
+
+<p id="hienThi"></p>
+<script>
+    class {
+        constructor() {
+        }
+    }
+    set(){
+
+    }
+    get(){
+
+    }
+
+    let list = []
+
+    hienThiSP(list)
+    function hienThiSP(danhSach) {
+        let table = '<table border="1" class="table">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th></th>\n' +
+            '        <th></th>\n' +
+            '        <th></th>\n' +
+            '        <th></th>\n' +
+            '        <th></th>\n' +
+            '        <th></th>\n' +
+            '    </tr>'
+        for (let i = 0; i <danhSach.length ; i++) {
+            table += '  <tr>\n' +
+                '        <td>'+(i+1)+'</td>\n' +
+                '        <td>'+danhSach[i].get()+'</td>\n' +
+                '        <td>'+danhSach[i].get()+'</td>\n' +
+                '        <td>'+danhSach[i].get()+'</td>\n' +
+                '        <td>'+danhSach[i].get()+'</td>\n' +
+                '        <td><input type="button" class="click" value="Sửa" onclick="edit('+i+')"></td>\n' +
+                '        <td><input type="button" class="click" value="Xóa" onclick="dell('+i+')"></td>\n' +
+                '    </tr>'
+        }
+        table += '</table>'
+        document.getElementById('hienThi').innerHTML = table;
+        document.getElementById('soLuong').innerText = 'Số Lượng : ' + list.length;
+    }
+
+    function addSp() {
+
+    }
+    function dell(index) {
+
+    }
+    function edit(index) {
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .table {
+            border: none;
+            width: 52%;
+
+        }
+        .input {
+            width: 10%;
+            border-collapse: collapse;
+            border: solid 2px;
+        }
+        .h1{
+            width: 50%;
+
+        }
+        .click{
+            background-color: black;
+            color: white;
+            width: 100%;
+        }
+        .add{
+            background-color: black;
+            color: white;
+        }
+        .sl{
+            position: absolute;
+            right: 400px;
+            width: 200px;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1 class="h1"> Danh sách sản phẩm</h1>
+
+<span>Sản Phẩm điện Thoại : </span>
+<span id="soLuong" class="sl"></span>
+<hr>
+
+<input type="text" id="tenSp" placeholder=" Tên sản phẩm" class="input">
+<input type="text" id="pin" placeholder=" Dung Lượng Pin" class="input">
+<input type="text" id="dungLuong" placeholder="Bộ nhớ" class="input">
+<input type="text" id="giaThanh" placeholder="Gía Cả" class="input">
+
+<input type="button" value="Thêm Mới" onclick="addSp()" class="add">
+
+<p id="hienThi"></p>
+
+<script>
+    class Mobie {
+        constructor(tenSp, pin ,dungLuong,giaThanh) {
+            this.tenSp = tenSp;
+            this.pin = pin
+            this.dungLuong = dungLuong;
+            this.giaThanh = giaThanh;
+        }
+        setTenSp(tenSp){
+            this.tenSp = tenSp
+        }
+        getTenSp(){
+            return this.tenSp
+        }
+        setPin(pin){
+            this.pin = pin
+        }
+        getPin(){
+            return this.pin
+        }
+        setDungLuong(dungLuong){
+            this.dungLuong = dungLuong
+        }
+        getDungLuong(){
+            return this.dungLuong
+        }
+        setGiaThanh(giaThanh) {
+            this.giaThanh = giaThanh
+        }
+        getGiaThanh(){
+            return this.giaThanh
+        }
+    }
+    let nokia= new Mobie('Nokia' , '5000mAh' , '4-Gb', 10000 )
+    let samSung = new Mobie('samSung' , '4000mAh' , '8-Gb', 15000 )
+    let iPhone = new Mobie('iPhone' , '2000mAh' , '16-Gb', 20000 )
+
+    let listDienThoai = [nokia, samSung,iPhone]
+
+    hienThiSP(listDienThoai)
+    
+    function hienThiSP(danhSach) {
+        let table = '<table border="1" class="table">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Tên Sp</th>\n' +
+            '        <th>Pin</th>\n' +
+            '        <th>Bộ Nhớ</th>\n' +
+            '        <th>Gía Thành</th>\n' +
+            '        <th>Sửa đổi</th>\n' +
+            '        <th>Xóa Sp</th>\n' +
+            '    </tr>'
+        for (let i = 0; i <danhSach.length ; i++) {
+            table += '  <tr>\n' +
+                '        <td>'+(i+1)+'</td>\n' +
+                '        <td>'+danhSach[i].getTenSp()+'</td>\n' +
+                '        <td>'+danhSach[i].getPin()+'</td>\n' +
+                '        <td>'+danhSach[i].getDungLuong()+'</td>\n' +
+                '        <td>'+danhSach[i].getGiaThanh()+'</td>\n' +
+                '        <td><input type="button" class="click" value="Sửa" onclick="edit('+i+')"></td>\n' +
+                '        <td><input type="button" class="click" value="Xóa" onclick="dell('+i+')"></td>\n' +
+                '    </tr>'
+        }
+            table += '</table>'
+        document.getElementById('hienThi').innerHTML = table;
+        document.getElementById('soLuong').innerText = 'Số Lượng : ' + listDienThoai.length;
+    }
+
+    function addSp() {
+        let ten = document.getElementById('tenSp').value;
+        let pin = document.getElementById('pin').value;
+        let dungLuong = document.getElementById('dungLuong').value;
+        let giaThanh = document.getElementById('giaThanh').value;
+
+        let mobie = new Mobie(ten,pin,dungLuong,giaThanh);
+        listDienThoai.push(mobie);
+        hienThiSP(listDienThoai);
+        document.getElementById('tenSp').value = " ";
+        document.getElementById('pin').value= " ";
+        document.getElementById('dungLuong').value = " ";
+        document.getElementById('giaThanh').value = " ";
+    }
+
+    function dell(index) {
+        let cof = confirm( ' bạn có muốn xóa lựa chon : '+ listDienThoai[index].getTenSp());
+        if(cof){
+            listDienThoai.splice(index , 1);
+        }else {
+            alert('bạn đã không xóa lựa chọn này ');
+        }
+        hienThiSP(listDienThoai);
+    }
+
+    function edit(index) {
+        let ten = document.getElementById('tenSp').value;
+        let pin = document.getElementById('pin').value;
+        let dungLuong = document.getElementById('dungLuong').value;
+        let giaThanh = document.getElementById('giaThanh').value;
+        listDienThoai[index].setTenSp(ten);
+        listDienThoai[index].setPin(pin);
+        listDienThoai[index].setDungLuong(dungLuong);
+        listDienThoai[index].setGiaThanh(giaThanh);
+        hienThiSP(listDienThoai);
+    }
+
+</script>
+
+</body>
+</html>

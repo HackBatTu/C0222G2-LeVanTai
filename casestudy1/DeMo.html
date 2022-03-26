@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Danh Sách Xe Máy</h1>
+
+<input type="text" id="id" placeholder="nhập id">
+<input type="text" id="bienKiemSoat" placeholder="nhập bks">
+<input type="text" id="chuSoHuu" placeholder="nhập Chủ sở hữu">
+<input type="text" id="dungTichXiLanh" placeholder="nhập dung tích xi lanh">
+<input type="button" onclick="themMoi()" value="Thêm Mới">
+<p id="ketQua"></p>
+<script>
+    class XeMay {
+        constructor(id, bienKiemSoat, chuSoHuu, dungTichXiLanh) {
+            this.id = id;
+            this.bienKiemSoat = bienKiemSoat;
+            this.chuSoHuu = chuSoHuu;
+            this.dungTichXiLanh = dungTichXiLanh;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setBienKS(bienKiemSoat) {
+            this.bienKiemSoat = bienKiemSoat;
+        }
+
+        getBienKS() {
+            return this.bienKiemSoat;
+        }
+
+        setChuSoHuu(chuSoHuu) {
+            this.chuSoHuu = chuSoHuu;
+        }
+
+
+        getChuSoHuu() {
+            return this.chuSoHuu;
+        }
+
+        setDungTichXilanh(dungTichXiLanh) {
+            this.dungTichXiLanh = dungTichXiLanh;
+        }
+
+        getDungTichXiLanh() {
+            return this.dungTichXiLanh;
+        }
+    }
+
+    // viết chương trình quản lý;
+    // hiện thị danh sách
+    let xeMay1 = new XeMay(1, "43K-0001", "chanh", 100)
+    let xeMay2 = new XeMay(2, "43K-0002", "chanh2", 100)
+    let xeMay3 = new XeMay(3, "43K-0003", "chanh3", 100)
+    let danhSachXeMay = [xeMay1, xeMay2, xeMay3];
+    hienThiDanhSach(danhSachXeMay);
+
+    function hienThiDanhSach(danhSach) {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Id</th>\n' +
+            '        <th>BKS</th>\n' +
+            '        <th>Chủ sở hữu</th>\n' +
+            '        <th>Dung tích xi lanh</th>\n' +
+            '        <th>Sửa</th>\n' +
+            '        <th>Xóa</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSach.length; i++) {
+            tableString += ' <tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + danhSach[i].getId() + '</td>\n' +
+                '        <td>' + danhSach[i].getBienKS() + '</td>\n' +
+                '        <td>' + danhSach[i].getChuSoHuu() + '</td>\n' +
+                '        <td>' + danhSach[i].getDungTichXiLanh() + '</td>\n' +
+                '        <td><input type="button" value="Edit" onclick="sua(' + i + ')"></td>\n' +
+                '        <td><input type="button" value="Xóa" onclick="xoa(' + i + ')"></td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+        document.getElementById("ketQua").innerHTML = tableString;
+    }
+
+    function themMoi() {
+        let id = document.getElementById("id").value;
+        let bienKiemSoat = document.getElementById("bienKiemSoat").value;
+        let chuSoHuu = document.getElementById("chuSoHuu").value;
+        let dungTichXiLanh = document.getElementById("dungTichXiLanh").value;
+        let xeMay = new XeMay(id, bienKiemSoat, chuSoHuu, dungTichXiLanh);
+        danhSachXeMay.push(xeMay);
+        hienThiDanhSach(danhSachXeMay);
+        document.getElementById("id").value = "";
+        document.getElementById("bienKiemSoat").value = "";
+        document.getElementById("chuSoHuu").value = "";
+        document.getElementById("dungTichXiLanh").value = "";
+    }
+
+    function xoa(index) {
+        let conf = confirm("bạn muốn xóa xe có bks là : " + danhSachXeMay[index].getBienKS());
+        if (conf) {
+            danhSachXeMay.splice(index, 1);
+        } else {
+            alert("Bạn đã không xóa")
+        }
+
+        hienThiDanhSach(danhSachXeMay);
+    }
+
+    function sua(index) {
+        let newId = prompt("nhập lại id");
+        let newBKS = prompt("nhập lại BKS");
+        danhSachXeMay[index].setId(newId);
+        danhSachXeMay[index].setBienKS(newBKS);
+        hienThiDanhSach(danhSachXeMay);
+    }
+</script>
+</body>
+</html>

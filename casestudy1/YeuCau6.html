@@ -20,77 +20,152 @@
         }
         .oTrong{
             text-align: center;
-
+            height:180px;
+        }
+        .inRa{
+            color: green;
+            font-size: 30px;
         }
 
     </style>
 </head>
 <body>
 <h1 class="h1">
-    Xổ số Anh Tài
+    Xổ Số Lùa Gà
 </h1>
 <hr>
 <div class='oTrong'>
     <div><h3> Mua Vé </h3>
-        <input type="text" id="xs1">
-        <input type="text" id="xs2">
-        <input type="text" id="xs3">
-        <input type="text" id="xs4">
-        <input type="text" id="xs5">
-        <input type="text" id="xs6">
+        <form>
+            <input type="text" min="1" max="99" id="xs1">
+            <input type="text" min="1" max="99" id="xs2">
+            <input type="text" min="1" max="99" id="xs3">
+            <input type="text" min="1" max="99" id="xs4">
+            <input type="text" min="1" max="99" id="xs5">
+            <input type="text" min="1" max="99" id="xs6">
+        </form>
 
     </div>
     <div><h3>Kết Qủa</h3>
-        <input type="text" id="so1">
-        <input type="text" id="so2">
-        <input type="text" id="so3">
-        <input type="text" id="so4">
-        <input type="text" id="so5">
-        <input type="text" id="so6">
+        <input type="text" id="ketQua1">
+        <input type="text" id="ketQua2">
+        <input type="text" id="ketQua3">
+        <input type="text" id="ketQua4">
+        <input type="text" id="ketQua5">
+        <input type="text" id="ketQua6">
 
     </div>
+    <div id="alertKetQua" class="inRa"></div>
 </div>
-<button type="button" onclick="mua()" class="nhap"> Mua Vé</button>
-<button type="button" onclick="xemKq()" class="nhap">Xem Kết Qủa</button>
+<button type="button" onclick="mua()" class="nhap" id="buttonMuaVe"> Mua Vé</button>
+<button type="button" onclick="xemKq()" class="nhap" id="buttonQuaySo">Quay Số Nào</button>
 
 </body>
 </html>
 <script>
+    class Xoso{
+        constructor(muaVe, ketQua) {
+            this.veSo= new Array(6)
+            this.ketQua = new Array(6)
+        }
+        setVeSo(veSo){
+            this.veSo = veSo
+        }
+        getVeSo(){
+            return this.veSo
+        }
+        setKetQua(ketQua){
+            this.ketQua = ketQua
+        }
+        getKetQua(){
+            return this.ketQua
+        }
+    }
+    let xoSo = new Xoso()
+
     let n = 0
     function mua() {
-        n =  Number(prompt('lựa chọn của bạn: ' +'\n'+ '1.nhập số muốn mua'+ '\n'+'2.hệ thống tự động'))
+        n =  Number(prompt('Lựa chọn của bạn: ' +'\n'+ '1.Nhập vé số bạn muốn mua'+ '\n'+'2.Hệ thống tự động mua cho bạn'))
         switch (n) {
             case 1:
-                alert('tiếp tục để nhập số bạn muốn mua')
+                alert('Tiếp tục để nhập số bạn muốn mua')
                 document.getElementById("xs1").value = parseInt(prompt('nhập 2 số đầu : '))
                 document.getElementById("xs2").value = parseInt(prompt('nhập 2 số tiếp theo : '))
                 document.getElementById("xs3").value = parseInt(prompt('tếp tục nhập 2 số : '))
                 document.getElementById("xs4").value = parseInt(prompt('nhập 2 số tiếp theo : '))
                 document.getElementById("xs5").value = parseInt(prompt('tiếp tục nhập 2 số : '))
-                document.getElementById("xs6").value = parseInt(prompt('nhập 2 số tiếp theo : '))
+                document.getElementById("xs6").value = parseInt(prompt('nhập 2 số cuối : '))
+                alert('Bạn đã mua vé thành công')
                 break
             case 2:
-                alert('hệ thống sẽ tự động mua cho bạn')
-                document.getElementById("xs1").value = Math.floor(Math.random() * 100);
-                document.getElementById("xs2").value = Math.floor(Math.random() * 100);
-                document.getElementById("xs3").value = Math.floor(Math.random() * 100);
-                document.getElementById("xs4").value = Math.floor(Math.random() * 100);
-                document.getElementById("xs5").value = Math.floor(Math.random() * 100);
-                document.getElementById("xs6").value = Math.floor(Math.random() * 100);
+                for (let i = 0; i < xoSo.getKetQua().length; i++) {
+                    xoSo.getVeSo()[i] = Math.round(Math.random() * 98 + 1);
+                }
+
+                document.getElementById("xs1").value = xoSo.getVeSo()[0];
+                document.getElementById("xs2").value = xoSo.getVeSo()[1];
+                document.getElementById("xs3").value = xoSo.getVeSo()[2];
+                document.getElementById("xs4").value = xoSo.getVeSo()[3];
+                document.getElementById("xs5").value = xoSo.getVeSo()[4];
+                document.getElementById("xs6").value = xoSo.getVeSo()[5];
+                alert('Hệ thống đã tự động mua cho bạn')
                 break
             default:
-                alert('vui lòng nhập theo yêu cầu')
-                break
+                alert('Vui lòng nhập theo yêu cầu')
         }
     }
     function xemKq() {
-        document.getElementById("so1").value = Math.floor(Math.random() * 100);
-        document.getElementById("so2").value = Math.floor(Math.random() * 100);
-        document.getElementById("so3").value = Math.floor(Math.random() * 100);
-        document.getElementById("so4").value = Math.floor(Math.random() * 100);
-        document.getElementById("so5").value = Math.floor(Math.random() * 100);
-        document.getElementById("so6").value = Math.floor(Math.random() * 100);
-        setTimeout(xemKq,3000)
+        let flag1 = true;
+        let flag2 = true;
+        let flag3 = true;
+        for (let i = 0; i < xoSo.getKetQua().length; i++) {
+            xoSo.getKetQua()[i] = Math.round(Math.random() * 98 + 1);
+        }
+        for (let i = xoSo.getKetQua().length - 1; i >= 0; i--) {
+            if (xoSo.getKetQua()[i] !== xoSo.getVeSo()[i]) {
+                flag1 = false;
+                break;
+            }
+        }
+        for (let i = xoSo.getKetQua().length - 1; i >= 1; i--) {
+            if (xoSo.getKetQua()[i] !== xoSo.getVeSo()[i]) {
+                flag2 = false;
+                break;
+            }
+        }
+        for (let i = xoSo.getKetQua().length - 1; i >= 2; i--) {
+            if (xoSo.getKetQua()[i] !== xoSo.getVeSo()[i]) {
+                flag3 = false;
+                break;
+            }
+        }
+        document.getElementById("ketQua1").value = xoSo.getKetQua()[0];
+        document.getElementById("ketQua2").value = xoSo.getKetQua()[1];
+        document.getElementById("ketQua3").value = xoSo.getKetQua()[2];
+        document.getElementById("ketQua4").value = xoSo.getKetQua()[3];
+        document.getElementById("ketQua5").value = xoSo.getKetQua()[4];
+        document.getElementById("ketQua6").value = xoSo.getKetQua()[5];
+
+        if (flag1 === true) {
+            document.getElementById("buttonMuaVe").setAttribute("disabled", true);
+            document.getElementById("buttonQuaySo").setAttribute("disabled", true);
+            return document.getElementById("alertKetQua").innerHTML = "Bạn trúng giải ĐẶC BIỆT! ";
+
+        } else if (flag2 === true) {
+            document.getElementById("buttonMuaVe").setAttribute("disabled", true);
+            document.getElementById("buttonQuaySo").setAttribute("disabled", true);
+            return document.getElementById("alertKetQua").innerHTML = "Bạn trúng giải NHẤT! ";
+
+        } else if (flag3 === true) {
+            document.getElementById("buttonMuaVe").setAttribute("disabled", true);
+            document.getElementById("buttonQuaySo").setAttribute("disabled", true);
+            return document.getElementById("alertKetQua").innerHTML = "Bạn trúng giải KHUYẾN KHÍCH! ";
+
+        } else {
+            document.getElementById("buttonMuaVe").setAttribute("disabled", true);
+            document.getElementById("buttonQuaySo").setAttribute("disabled", true);
+            return document.getElementById("alertKetQua").innerHTML = "Hog Trúng Rồi ! Hơi Non Bé Ơi!";
+        }
     }
 
 </script>

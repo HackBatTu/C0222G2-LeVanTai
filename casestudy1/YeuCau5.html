@@ -7,8 +7,8 @@
 <body>
 <script>
     // bài 1
-    // let n = Number(prompt('nhập số n'))
-    // let m = Number(prompt('nhập số m'))
+    let n = Number(prompt('nhập chiều dài mảng 2 chiều: '))
+    let m = Number(prompt('nhập số mảng 2 chiều : '))
     // let tong =0 ;
     //
     //  for(let i = 0 ; i<= n*m; i++){
@@ -18,29 +18,61 @@
     //  }
     // console.log(tong)
 
+    // cách 2 (mảng 2 chiều )
+    let a = new Array(n);
+    for (let i = 0; i < n; i++) {
+        a[i] = new Array(m);
+    }
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a[i].length; j++) {
+            a[i][j] = parseInt(Math.random() * 100 + 1);
+        }
+    }
+    console.log(a )
+    function getTotal(array) {
+        let total = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (a[i][j] % 2 === 0) {
+                    total += a[i][j];
+                }
+            }
+        }
+        return total;
+    }
+
+    console.log("Total: " + getTotal(a));
+
 
     // bài 2
     // let a = [
-    //     [1,2,3],
+    //     [11,12,13],
     //     [4,5,6],
-    //     [7,8,9]
+    //     [7,8,17]
     // ];
     // let count = 0 ;
     //  for( let i = 0 ; i < a.length ; i ++){
     //      for(let j = 0 ; j < a[i].length ; j++){
-    //          isPrime(a[i][j])
+    //          kiemTra(a[i][j])
     //             count++
     //      }
     //  }
+    // console.log('tổng số nguyên tố có trong mảng 2 chiều : ' + count)
     //
-    // function isPrime(numBer) {
+    // function kiemTra(numBer) {
     //     let flag = true
     //     if (numBer < 2) {
     //         flag = false
-    //     } else if (numBer % 2 === 0) {
+    //     }else if (numBer == 2) {
+    //         flag = true
+    //     }else if(numBer % 2 == 0){
     //         flag = false
-    //     } else {
-    //         for (let i = 2; i < numBer; i++) {
+    //     }else if(numBer === 3) {
+    //         flag = true
+    //     }else if(numBer%3===0){
+    //        flag = false
+    //     }else{
+    //         for (let i = 3; i < numBer; i++) {
     //             if (numBer % i == 0 ) {
     //                 flag = true
     //                 break
@@ -50,7 +82,7 @@
     //     if (flag) {
     //         console.log(numBer + ' là số nguyên tố ')
     //     } else {
-    //         console.log(numBer + 'không phải là số nguyên tố ')
+    //         console.log(numBer + ' không phải là số nguyên tố ')
     //     }
     //     return flag
     // }
@@ -63,6 +95,18 @@
     //     [4,5,6],
     //     [7,8,9]
     // ];
+    // let n = parseInt(prompt("Nhập số n: "));
+    // let m = parseInt(prompt("Nhập số m: "));
+    // let a = new Array(n);
+    // for (let i = 0; i < n; i++) {
+    //     a[i] = new Array(m);
+    // }
+    // for (let i = 0; i < a.length; i++) {
+    //     for (let j = 0; j < a[i].length; j++) {
+    //         a[i][j] = parseInt(Math.random() * 100 + 1);
+    //     }
+    // }
+    // console.log(a);
     // let max=0;
     // let min = a[0][0]
     //

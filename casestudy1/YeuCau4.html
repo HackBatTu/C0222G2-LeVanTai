@@ -6,30 +6,81 @@
 </head>
 <body>
 <script>
-    // bài 2
-    // let s = 'cabca'
-    // let arr = s.split('')
-    // for(let i =0 ; i< arr.length; i++){
-    //     if(arr[i])
-    // }
+    // bài 1
 
+    // let str = "tRuong    TaN   HAI";
+
+    // function convertString(str) {
+    //     let strNew = str.toLowerCase(str);
+    //     let a = new Array(strNew.length)
+
+    //     for (let i = 0; i < strNew.length; i++) {
+    //         a[i] = strNew.charAt(i);
+    //     }
+    //     for (let i = 0; i < a.length; i++) {
+    //         if (a[i] === " " && a[i + 1] === " ") {
+    //             a.splice(i, 1);
+    //             a[i + 1] = a[i + 1].toUpperCase(a[i + 1]);
+    //             i--;
+    //         }
+    //         a[0] = a[0].toUpperCase(a[0]);
+    //     }
+    //     return a.join("");
+    // }
+    // function count(str) {
+    //     let array = Array();
+    //     array = str.split(" ");
+    //     let max = Number(array[0].length);
+    //     let maxStr = array[0];
+    //     for (let i = 1; i < array.length ; i++) {
+    //         if (Number(array[i].length) > max) {
+    //             max = Number(array[i].length);
+    //             maxStr = array[i];
+    //         }
+    //
+    //     }
+    //     return maxStr;
+    // }
+    // console.log(str + " => " + convertString(str) + "\n" + "Max: " + count(convertString(str)));
+
+    // bài 2
+    // let str = "abcaabca"; arr = str.split("")
+    //
+    // function demKyTu(arr) {
+    //     let count = 0;
+    //     for (let i = 0; i < arr.length ; i++) {
+    //         for (let j = i+1; j < arr.length ; j++) {
+    //             if (arr[i] === arr[j]) {
+    //                 arr[i] = " ";
+    //                 break;
+    //             }
+    //         }
+    //     }
+    //     for (let i = 0; i < arr.length ; i++) {
+    //         if (arr[i] != " ") {
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+    // }
+    // console.log(demKyTu(arr));
 
     //bài 3
-    let s1 = 'aabcc' ;arr1 = s1.split('')
-    let s2 = 'adcaa' ;arr2 = s2.split('')
-    let arr = []
-    let count= 0;
-
-    for(let i= 0; i<arr1.length; i++){
-        for (let j = 0 ; j<arr2.length ; j++){
-            if(arr1[i] == arr2[j]){
-                arr.push(arr1[i])
-                arr2.splice( j ,1)
-                count++
-            }
-        }
-    }
-    console.log(count , ' kí tự ' + arr)
+    // let s1 = 'aabcc' ;arr1 = s1.split('')
+    // let s2 = 'adcaa' ;arr2 = s2.split('')
+    // let count= 0;
+    //
+    // for (let i = 0; i < s1.length; i++) {
+    //     for (let j = 0; j < s2.length; j++) {
+    //         if (s1[i] == s2[j]) {
+    //             count++;
+    //             console.log("chuoi:" + s2.replace(s2[j], ""));
+    //             s2 = s2.replace(s2[j], "");
+    //             break;
+    //         }
+    //     }
+    // }
+    // console.log(count)
 </script>
 </body>
 </html>
