@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //bài 1
+
+    // let n = Number(prompt('nhập chiều cao của tháp'))
+    // for (let i=1 ; i<= n ;i++){
+    //     for(let j=1; j<=n-1 ; j++){
+    //         document.write('*')
+    //     }document.write('<br>')
+    // }
+
+    //bài 2
+
+    // let a = parseInt(prompt('nhập ngày : '))
+    // let b = parseInt(prompt('nhập tháng : '))
+    //
+    // console.log('ngày : ' + a + '\n' + 'tháng : ' + b)
+
+    //bài 3
+
+    // let s = 1
+    // let n = Number(prompt('nhập số n : '))
+    // for(let i = 1 ; i<= n ; i++){
+    //     s = s + 1/(i+1)
+    // }
+    // console.log(s)
+
+    //bài 4
+    // let temp = 1
+    // let sum = 0
+    // let s= 0
+    // let n = Number(prompt('nhập số n : '))
+    // for(let i = 1 ; i<=n ; i++){
+    //     temp *=i
+    //      sum += Math.pow(-1 , n) * (1/temp)
+    //     s = 15+sum
+    // }
+    // console.log(s)
+
+    // bài 5
+    // let temp = 1
+    // let s = 1
+    // let n = Number(prompt('nhập số n : '))
+    // for (let i = 1; i<=n; i++){
+    //     if(i%2 !== 0){
+    //         temp *= (2i-1)
+    //         s = s + 1/temp
+    //     }
+    // } console.log(s)
+
+    // bài 6 ***
+    //
+    // let n = parseInt(prompt('nhập số n : '))
+    // let giaiThuaKep = 1
+    //
+    //
+    // for (let i = 1; i <= n; i++) {
+    //     if (n % 2 == 0) {
+    //         giaiThuaKep *= (2 * i)
+    //     } else {
+    //         giaiThuaKep *= (2 * i - 1)
+    //     }
+    // }console.log( giaiThuaKep)
+
+    //bài 7
+    // let m = prompt('nhâp số : ')
+    // let arr = m.split('')
+
+    // let sum = 0
+    // let temp = 1
+    // for (let i = 0 ; i< arr.length ; i++){
+    //     sum += Number(arr[i])
+    //     temp *= arr[i]
+    // }
+    // console.log('tổng số m cho trk là : ' + sum +'\n'+
+    //     'tích số m cho trk là : ' + temp)
+
+    // //bài 8
+    let a = parseInt(prompt('nhập số a : '))
+    let b = parseInt(prompt('nhập số b : '))
+    let uCLN = 1
+    let bcNN = 1
+    while (a!=b){
+        if(a>b){
+            a-=b
+        }else {
+            b-=a
+        }
+    }console.log(a)
+
+
+</script>
+</body>
+</html>

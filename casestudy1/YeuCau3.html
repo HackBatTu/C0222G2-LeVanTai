@@ -8,13 +8,14 @@
 <script>
 
     //bài 1
-    // let arr =[]
-    // let e = parseInt(prompt('chiều dài mảng'))
+    // let arr =[];
+    // let e = parseInt(prompt('chiều dài mảng'));
+
     // for(let j =0 ; j< e ; j++){
-    //     let a = parseInt(prompt('phần tử mảng a'))
-    //     arr.push(a)
+    //     let a = parseInt(prompt('phần tử mảng a'));
+    //     arr.push(a);
     // }
-    // console.log('Mảng ban đầu :' + arr)
+    // console.log('Mảng ban đầu :' + arr);
     //
     // let b = [];
     // let sum=0;
@@ -23,52 +24,65 @@
     //     sum+=arr[i];
     //     b[i]=sum;
     // }
-    // console.log('prefix sums  : ' + b)
+    // console.log('prefix sums  : ' + b);
 
     // bài 2
-    let a = [7,2,5,3,5,3]
-    let b = [7,2,5,4,6,3,5,3]
-    let c = []
+    // let arrA = [];
+    // let arrB = [];
+    // let arrC = [];
+    //
+    // let a = prompt(' nhập vào độ dài mảng arrA')
+    // for (let i = 0; i < a; i++) {
+    //     arrA.push(parseInt(prompt('phần tử mảng a')))
+    // }
+    //
+    // let b = prompt('nhập độ dài mảng arrB ')
+    // for (let i = 0; i < b; i++) {
+    //     arrB.push(parseInt(prompt('phần tử mảng b')))
+    // }
 
-    for (let i = 0; i < b.length; i++) {
-        for (let j = 0; j < a.length; j++) {
-            if (b[i] == a[j]) {
-                b.splice(i, 1)
-            // }else {
-            //     c = [...(new Set(b))];
-            }
-        }
+    // for(let i = 0 ; i< b ; i++){
+    //     if(arrA.indexOf(arrB[i]) === -1 && arrC.indexOf(arrB[i]) === -1){// phần tử mảng B không thuộc A và không thuộc C
+    //         arrC.push(arrB[i])
+    //     }
+    // }
+    // arrC.sort( function (a,b) {return a-b})
+    //
+    // console.log('mảng A : ' + arrA +'\n'+
+    //         'mảng B: '+ arrB +'\n'+
+    // 'số nguyên trong mảng b nhưng lại không xuất hiện trong mảng A là ' + arrC)
 
-        for (let j = 0; j < b.length; j++) {
-                if (b[i] == b[j]) {
-                    b.splice(i, 1)
-                } else {
-                    c[i] = b[i]
-                }
-        }
-    }
-    console.log(c)
 
     //bài 3
 
-    //  let arr1 = [5,2,5]
-    //  let arr2 = [6,3,4]
-    //  let max = 0;
-    //  let index;
+    // let size = prompt(' nhập độ dài mảng : ')
+    // let arr1 = []
+    // let arr2 = []
     //
-    // for(let i =0 ; i< arr1.length ; i++){
-    //         if(arr1[i]/arr2[i] > max) {
+    // for (let i = 0; i < size; i++) {
+    //     arr1.push(parseInt(prompt('nhập phần tử mảng 1 ')))
+    //     arr2.push(parseInt(prompt('nhập phần tử mảng 2 ')))
+    // }
+    // let max = 0;
+    // let index;
+    //
+    // function maxFaction(arr1, arr2) {
+    //     for (let i = 0; i < arr1.length; i++) {
+    //         if (arr1[i] / arr2[i] > max) {
     //             max = arr1[i] / arr2[i]
     //             index = i
     //         }
+    //     }return index
     //
-    // } console.log('phân số cao nhất là : ' + arr1[index] + '/' + arr2[index] + '\n' + 'với chỉ số : ' + index)
+    // }
+    // console.log('phân số cao nhất là : ' + arr1[index] + '/' + arr2[index] + '\n' + 'với chỉ số : '+ maxFaction(arr1, arr2));
+
 
 
     //bài 4
 
-    // let num = prompt('nhập dãy số : ')
-    // let arr = num.split('')
+    // let num = prompt('nhập dãy số : ');
+    // let arr = num.split('');
     // let str = ''
     //
     // for (let i = 0; i < arr.length; i++) {
@@ -103,7 +117,6 @@
     //         case 9:
     //             str += ' chín';
     //             break;
-    //
     //     }
     //
     // }console.log(str)

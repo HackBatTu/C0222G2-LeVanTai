@@ -9,42 +9,33 @@
     // bài 1
 
     // let str = "tRuong    TaN   HAI";
-
+    // str = str.trim().toLowerCase()  //// xóa khoảng trắng 2 bên và đưa về chữ thường
+    //
     // function convertString(str) {
-    //     let strNew = str.toLowerCase(str);
-    //     let a = new Array(strNew.length)
-
-    //     for (let i = 0; i < strNew.length; i++) {
-    //         a[i] = strNew.charAt(i);
-    //     }
-    //     for (let i = 0; i < a.length; i++) {
-    //         if (a[i] === " " && a[i + 1] === " ") {
-    //             a.splice(i, 1);
-    //             a[i + 1] = a[i + 1].toUpperCase(a[i + 1]);
+    //     let arr = str.split(' ')
+    //     for (let i = 0 ; i<arr.length ; i++){
+    //         if(arr[i]=== ''){
+    //             arr.splice(i,1)
     //             i--;
     //         }
-    //         a[0] = a[0].toUpperCase(a[0]);
+    //         arr[i] = arr[i][0].toUpperCase()+ arr[i].substring(1) //// viet hoa chữ cái đầu từ và cụm từ
     //     }
-    //     return a.join("");
+    //     return arr.join(' ')
     // }
     // function count(str) {
-    //     let array = Array();
-    //     array = str.split(" ");
-    //     let max = Number(array[0].length);
-    //     let maxStr = array[0];
-    //     for (let i = 1; i < array.length ; i++) {
-    //         if (Number(array[i].length) > max) {
-    //             max = Number(array[i].length);
-    //             maxStr = array[i];
+    //     let arr = str.split('   ')
+    //     let maxStr = arr[0];
+    //     for (let i = 1; i < arr.length ; i++) {
+    //         if (maxStr.length < arr[i].length) {
+    //             maxStr = arr[i];
     //         }
-    //
     //     }
     //     return maxStr;
     // }
-    // console.log(str + " => " + convertString(str) + "\n" + "Max: " + count(convertString(str)));
+    // console.log(str + " => " + convertString(str) + "\n" + "Max: " + count(str));
 
     // bài 2
-    // let str = "abcaabca"; arr = str.split("")
+    // let str = prompt('nhập chuỗi kí tự'); arr = str.split("")
     //
     // function demKyTu(arr) {
     //     let count = 0;
@@ -63,24 +54,25 @@
     //     }
     //     return count;
     // }
-    // console.log(demKyTu(arr));
+    // alert(demKyTu(arr));
 
-    //bài 3
-    // let s1 = 'aabcc' ;arr1 = s1.split('')
-    // let s2 = 'adcaa' ;arr2 = s2.split('')
+    // bài 3
+    // let s1 = 'aabcc' ;
+    // let s2 = 'adcaa' ;
     // let count= 0;
-    //
-    // for (let i = 0; i < s1.length; i++) {
-    //     for (let j = 0; j < s2.length; j++) {
-    //         if (s1[i] == s2[j]) {
-    //             count++;
-    //             console.log("chuoi:" + s2.replace(s2[j], ""));
-    //             s2 = s2.replace(s2[j], "");
-    //             break;
+    // function DemKiTuChung(s1,s2) {
+    //     for (let i = 0; i < s1.length; i++) {
+    //         for (let j = 0; j < s2.length; j++) {
+    //             if (s1[i] == s2[j]) {
+    //                 s2 = s2.replace(s2[j], "");
+    //                 count++;
+    //                 break;
+    //             }
     //         }
-    //     }
+    //     }return count
     // }
-    // console.log(count)
+    //
+    // console.log(DemKiTuChung(s1,s2) )
 </script>
 </body>
 </html>

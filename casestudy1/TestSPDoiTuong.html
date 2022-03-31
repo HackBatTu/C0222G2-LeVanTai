@@ -5,12 +5,13 @@
     <title>Title</title>
     <style>
         .table {
-            border: none;
-            width: 52%;
+            border-collapse: collapse;
+            border: solid black 1px;
+            width: 60%;
 
         }
         .input {
-            width: 10%;
+            width: 12%;
             border-collapse: collapse;
             border: solid 2px;
         }
@@ -27,31 +28,26 @@
             background-color: black;
             color: white;
         }
-        .sl{
-            position: absolute;
-            right: 400px;
-            width: 200px;
-            padding: 10px;
-        }
 
     </style>
 </head>
 <body>
 
 <h1 class="h1"> Danh sách sản phẩm</h1>
-
-<span>Sản Phẩm điện Thoại : </span>
-<span id="soLuong" class="sl"></span>
-<hr>
-
+<div>
+<p id="soLuong" class="sl"></p>
+</div>
+<div>
 <input type="text" id="tenSp" placeholder=" Tên sản phẩm" class="input">
 <input type="text" id="pin" placeholder=" Dung Lượng Pin" class="input">
 <input type="text" id="dungLuong" placeholder="Bộ nhớ" class="input">
 <input type="text" id="giaThanh" placeholder="Gía Cả" class="input">
-
 <input type="button" value="Thêm Mới" onclick="addSp()" class="add">
+</div>
+
 
 <p id="hienThi"></p>
+<input type="button" value="sắp xếp theo giá " class="add" onclick="xepSp()">
 
 <script>
     class Mobie {
@@ -85,16 +81,25 @@
         getGiaThanh(){
             return this.giaThanh
         }
+        toString(){
+            return  'mã : '+ this.tenSp+'\n'+
+                'tên máy : '+ this.pin +'\n'+
+                'tên hãng : '+this.dungLuong + '\n'+
+                'giá : ' + this.giaThanh
+        }
     }
     let nokia= new Mobie('Nokia' , '5000mAh' , '4-Gb', 10000 )
-    let samSung = new Mobie('samSung' , '4000mAh' , '8-Gb', 15000 )
-    let iPhone = new Mobie('iPhone' , '2000mAh' , '16-Gb', 20000 )
+    let samSung = new Mobie('SamSung' , '4000mAh' , '8-Gb', 15000 )
+    let iPhone = new Mobie('Iphone' , '2000mAh' , '16-Gb', 20000 )
+    console.log(nokia.toString())
+    console.log(samSung.toString())
+    console.log(iPhone.toString())
 
     let listDienThoai = [nokia, samSung,iPhone]
 
     hienThiSP(listDienThoai)
-    
-    function hienThiSP(danhSach) {
+
+    function hienThiSP(list) {
         let table = '<table border="1" class="table">\n' +
             '    <tr>\n' +
             '        <th>STT</th>\n' +
@@ -105,18 +110,18 @@
             '        <th>Sửa đổi</th>\n' +
             '        <th>Xóa Sp</th>\n' +
             '    </tr>'
-        for (let i = 0; i <danhSach.length ; i++) {
+        for (let i = 0; i <list.length ; i++) {
             table += '  <tr>\n' +
                 '        <td>'+(i+1)+'</td>\n' +
-                '        <td>'+danhSach[i].getTenSp()+'</td>\n' +
-                '        <td>'+danhSach[i].getPin()+'</td>\n' +
-                '        <td>'+danhSach[i].getDungLuong()+'</td>\n' +
-                '        <td>'+danhSach[i].getGiaThanh()+'</td>\n' +
+                '        <td>'+list[i].getTenSp()+'</td>\n' +
+                '        <td>'+list[i].getPin()+'</td>\n' +
+                '        <td>'+list[i].getDungLuong()+'</td>\n' +
+                '        <td>'+list[i].getGiaThanh()+'</td>\n' +
                 '        <td><input type="button" class="click" value="Sửa" onclick="edit('+i+')"></td>\n' +
                 '        <td><input type="button" class="click" value="Xóa" onclick="dell('+i+')"></td>\n' +
                 '    </tr>'
         }
-            table += '</table>'
+        table += '</table>'
         document.getElementById('hienThi').innerHTML = table;
         document.getElementById('soLuong').innerText = 'Số Lượng : ' + listDienThoai.length;
     }
@@ -127,18 +132,25 @@
         let dungLuong = document.getElementById('dungLuong').value;
         let giaThanh = document.getElementById('giaThanh').value;
 
-        let mobie = new Mobie(ten,pin,dungLuong,giaThanh);
-        listDienThoai.push(mobie);
+        let mobie = new Mobie(ten, pin, dungLuong, giaThanh);
+
+        if (ten != ""&& pin != "" && dungLuong != "" && giaThanh != ""){
+            listDienThoai.push(mobie)
+        }else{
+            alert(' Bạn cần nhập đầy đủ thông tin vào')
+        }
+
         hienThiSP(listDienThoai);
-        document.getElementById('tenSp').value = " ";
-        document.getElementById('pin').value= " ";
-        document.getElementById('dungLuong').value = " ";
-        document.getElementById('giaThanh').value = " ";
+
+        document.getElementById('tenSp').value = "";
+        document.getElementById('pin').value= "";
+        document.getElementById('dungLuong').value = "";
+        document.getElementById('giaThanh').value = "";
     }
 
     function dell(index) {
-        let cof = confirm( ' bạn có muốn xóa lựa chon : '+ listDienThoai[index].getTenSp());
-        if(cof){
+        let conf = confirm( ' bạn có muốn xóa lựa chon : '+ listDienThoai[index].getTenSp());
+        if(conf){
             listDienThoai.splice(index , 1);
         }else {
             alert('bạn đã không xóa lựa chọn này ');
@@ -147,17 +159,57 @@
     }
 
     function edit(index) {
-        let ten = document.getElementById('tenSp').value;
-        let pin = document.getElementById('pin').value;
-        let dungLuong = document.getElementById('dungLuong').value;
-        let giaThanh = document.getElementById('giaThanh').value;
-        listDienThoai[index].setTenSp(ten);
-        listDienThoai[index].setPin(pin);
-        listDienThoai[index].setDungLuong(dungLuong);
-        listDienThoai[index].setGiaThanh(giaThanh);
+        let ten = prompt(' Nhập tên thay đổi')
+        let pin = prompt('Pin')
+        let dungLuong = prompt('dung lượng')
+        let giaThanh = prompt('giá thành')
+
+            listDienThoai[index].setTenSp(ten);
+            listDienThoai[index].setPin(pin);
+            listDienThoai[index].setDungLuong(dungLuong);
+            listDienThoai[index].setGiaThanh(giaThanh);
+
         hienThiSP(listDienThoai);
     }
+    function xepSp() {
+        let temp;
+        for(let i =0; i< listDienThoai.length-1; i++){
+            for (let j = i+1; j<listDienThoai.length; j++){
+                if(listDienThoai[i].getGiaThanh()>listDienThoai[j].getGiaThanh()){
+                    temp = listDienThoai[i]
+                    listDienThoai[i]=listDienThoai[j]
+                    listDienThoai[j]= temp
+                }
+            }
+        }hienThiSP(listDienThoai)
+    }
 
+    // function edit(index) {
+    //     document.getElementById("suaThongTin").style.display = "block";
+    //     document.getElementById("suaSTT").value = index;
+    //     document.getElementById("suaTenNhanVien").value = listDienThoai[index].getTenSp();
+    //     document.getElementById("suaGiaTien").value = listDienThoai[index].getPin();
+    //     document.getElementById("suaD").value = listDienThoai[index].getDungLuong();
+    //     document.getElementById("suaThongTinCaNhan").value = listDienThoai[index].getGiaThanh();
+    // }
+    //
+    // function luuChinhSua() {
+    //     let index = document.getElementById("suaSTT").value;
+    //     let ten = document.getElementById("suaTenSp").value;
+    //     let pin = document.getElementById("suaPin").value;
+    //     let dungLuong = document.getElementById("suaDungLuong").value;
+    //     let giaThanh = document.getElementById("suaGiaThanh").value;
+    //
+    //     let luaChon = confirm("Bạn có muốn lưu chỉnh sửa không?");
+    //
+    //     if (luaChon) {
+    //         listDienThoai[index].setTenSp(ten);
+    //         listDienThoai[index].setPin(pin);
+    //         listDienThoai[index].setDungLuong(dungLuong);
+    //         listDienThoai[index].setGiaThanh(giaThanh);
+    //
+    //     } hienThiSP(listDienThoai);
+    // }
 </script>
 
 </body>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .table {
+            border-collapse: collapse;
+            border: solid black 1px;
+            width: 60%;
+
+        }
+        .input {
+            width: 8%;
+            border-collapse: collapse;
+            border: solid 2px;
+        }
+        .h1{
+            width: 50%;
+
+        }
+        .click{
+            background-color: black;
+            color: white;
+            width: 100%;
+        }
+        .add{
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<h1 class="h1"><u>SỔ TIẾT KIỆM </u> </h1>
+<div>
+    <p id="soLuong" class="sl"></p>
+</div>
+<div>
+    <input type="text" id="ma" placeholder="Mã" class="input">
+    <input type="text" id="class" placeholder="Loại tiết kiệm" class="input">
+    <input type="text" id="name" placeholder="Họ tên khách hàng" class="input">
+    <input type="text" id="cmnd" placeholder="Chứng minh thư" class="input">
+    <input type="date" id="date" placeholder="Ngày mở Sổ" class="input">
+    <input type="text" id="money" placeholder="Số tiền gửi" class="input">
+    <input type="button" value="Thêm Mới" onclick="addSp()" class="add">
+</div>
+
+<p id="hienThi"></p>
+
+
+
+<script>
+    class SoTietKiem {
+        constructor(ma,loai,name,cMND,date,money) {
+            this.ma = ma;
+            this.loai= loai
+            this.name = name;
+            this.cMND = cMND;
+            this.date = date
+            this.money = money
+        }
+        setMa(ma){
+            this.ma = ma;
+        }
+        getMa(){
+            return this.ma
+        }
+        setLoai(loai){
+            this.loai = loai
+        }
+        getLoai(){
+            return this.loai
+        }
+        setName(name){
+            this.name = name
+        }
+        getName(){
+            return this.name
+        }
+        setCMND(cMND) {
+            this.cMND = cMND
+        }
+        getCMND(){
+            return this.cMND
+        }
+        setDate(date) {
+            this.date = date
+        }
+        getDate(){
+            return this.date
+        }
+        setMoney(money) {
+            this.money = money
+        }
+        getMoney(){
+            return this.money
+        }
+
+    }
+    let so1 = new SoTietKiem('x1111' , 'hạng 1' , 'Lê Văn A', 111123 , '2022-02-01' , 10000 );
+    let so2 = new SoTietKiem('x1112' , 'hạng 2' , 'Lê Văn B', 111124 , '2022-02-02' , 20000 );
+    let so3 = new SoTietKiem('x1113' , 'hạng 3' , 'Lê Văn C', 111125 , '2022-02-03' , 30000 );
+
+
+
+    let listSoTietKiem = [so1, so2,so3];
+
+    hienThiSP(listSoTietKiem);
+
+    function hienThiSP(list) {
+        let table = '<table border="1" class="table">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Mã Sổ</th>\n' +
+            '        <th>Loại Tiết Kiệm</th>\n' +
+            '        <th>Họ Tên Khách Hàng</th>\n' +
+            '        <th>Chứng Minh Thư</th>\n' +
+            '        <th>Ngày mở sổ</th>\n' +
+            '        <th>Số Tiền Gửi</th>\n' +
+            '        <th>Xóa Sổ</th>\n' +
+            '    </tr>'
+        for (let i = 0; i <list.length ; i++) {
+            table += '  <tr>\n' +
+                '        <td>'+(i+1)+'</td>\n' +
+                '        <td>'+list[i].getMa()+'</td>\n' +
+                '        <td>'+list[i].getLoai()+'</td>\n' +
+                '        <td>'+list[i].getName()+'</td>\n' +
+                '        <td>'+list[i].getCMND()+'</td>\n' +
+                '        <td>'+list[i].getDate()+'</td>\n' +
+                '        <td>'+list[i].getMoney()+'</td>\n' +
+                '        <td><input type="button" class="click" value="Xóa" onclick="dell('+i+')"></td>\n' +
+                '    </tr>'
+        }
+        table += '</table>'
+        document.getElementById('hienThi').innerHTML = table;
+        document.getElementById('soLuong').innerText = 'Số Lượng : ' + listSoTietKiem.length;
+    }
+
+    function addSp() {
+        let ma = document.getElementById('ma').value;
+        let loai = document.getElementById('class').value;
+        let ten = document.getElementById('name').value;
+        let cMND = document.getElementById('cmnd').value;
+        let date = document.getElementById('date').value;
+        let money = document.getElementById('money').value;
+
+        let soTietKiem = new SoTietKiem(ma, loai, ten, cMND,date,money);
+
+        if (ma != ""&& loai != "" && ten != "" && cMND != "" && date != "" && money != "" ){
+            listSoTietKiem.push(soTietKiem);
+            alert('Bạn đã thêm thành công');
+        } else{
+            alert(' Nhập chưa đầy đủ thông tin? Bạn hãy nhập lại : ');
+        }
+
+        hienThiSP(listSoTietKiem);
+
+        document.getElementById('tenSp').value = "";
+        document.getElementById('pin').value= "";
+        document.getElementById('dungLuong').value = "";
+        document.getElementById('giaThanh').value = "";
+    }
+
+    function dell(index) {
+        let conf = confirm( 'Bạn có muốn xóa Mã : '+ listSoTietKiem[index].getMa());
+        if(conf){
+            listSoTietKiem.splice(index , 1);
+        }else {
+            alert('bạn đã không xóa mã này ');
+        }
+        hienThiSP(listSoTietKiem);
+    }
+
+</script>
+</body>
+</html>
